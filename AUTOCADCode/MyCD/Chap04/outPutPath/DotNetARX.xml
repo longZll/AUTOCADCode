@@ -1,0 +1,4490 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNetARX</name>
+    </assembly>
+    <members>
+        <member name="T:DotNetARX.AnnotateTools">
+            <summary>
+            注释缩放操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.AnnotateTools.AddScale(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.Double,System.Double)">
+            <summary>
+            为图形添加一个新的注释比例
+            </summary>
+            <param name="db">图形数据库对象</param>
+            <param name="scaleName">缩放比例名</param>
+            <param name="paperUnits">缩放比例的图纸单位</param>
+            <param name="drawingUnits">缩放比例的图形单位</param>
+            <returns>返回添加的注释比例</returns>
+        </member>
+        <member name="M:DotNetARX.AnnotateTools.AttachScale(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String[])">
+            <summary>
+            为实体添加指定的注释比例
+            </summary>
+            <param name="entId">实体的Id</param>
+            <param name="scaleNames">注释比例名列表</param>
+        </member>
+        <member name="M:DotNetARX.AnnotateTools.GetAllScales(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            获取实体拥有的所有缩放比例
+            </summary>
+            <param name="entId">实体的Id</param>
+            <returns>返回实体的缩放比例列表</returns>
+        </member>
+        <member name="M:DotNetARX.AnnotateTools.RemoveScale(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String[])">
+            <summary>
+            删除实体的缩放比例
+            </summary>
+            <param name="entId">实体的Id</param>
+            <param name="scaleNames">缩放比例名列表</param>
+        </member>
+        <member name="T:DotNetARX.ArcTools">
+            <summary>
+            简化圆弧操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ArcTools.CreateArcSCE(Autodesk.AutoCAD.DatabaseServices.Arc,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            根据圆心、起点和终点来创建圆弧
+            </summary>
+            <param name="arc">圆弧对象</param>
+            <param name="startPoint">起点</param>
+            <param name="centerPoint">圆心</param>
+            <param name="endPoint">终点</param>
+        </member>
+        <member name="M:DotNetARX.ArcTools.CreateArc(Autodesk.AutoCAD.DatabaseServices.Arc,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            根据起点、圆心和圆弧角度创建圆弧
+            </summary>
+            <param name="arc">圆弧对象</param>
+            <param name="startPoint">起点</param>
+            <param name="centerPoint">圆心</param>
+            <param name="angle">圆弧角度</param>
+        </member>
+        <member name="M:DotNetARX.ArcTools.CreateArc(Autodesk.AutoCAD.DatabaseServices.Arc,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            三点法创建圆弧
+            </summary>
+            <param name="arc">圆弧对象</param>
+            <param name="startPoint">起点</param>
+            <param name="pointOnArc">圆弧上的点</param>
+            <param name="endPoint">终点</param>
+        </member>
+        <member name="T:DotNetARX.DynBlockPropTypeCode">
+            <summary>
+            动态块的动态属性类型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DynBlockPropTypeCode.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DynBlockPropTypeCode.Real">
+            <summary>
+            实数
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DynBlockPropTypeCode.Short">
+            <summary>
+            短整型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DynBlockPropTypeCode.Long">
+            <summary>
+            长整型
+            </summary>
+        </member>
+        <member name="T:DotNetARX.BlockTools">
+            <summary>
+            块操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.BlockTools.AddBlockTableRecord(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.Entity})">
+            <summary>
+            创建一个块表记录并添加到数据库中
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="blockName">块名</param>
+            <param name="ents">加入块中的实体列表</param>
+            <returns>返回块表记录的Id</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.AddBlockTableRecord(Autodesk.AutoCAD.DatabaseServices.Database,System.String,Autodesk.AutoCAD.DatabaseServices.Entity[])">
+            <summary>
+            创建一个块表记录并添加到数据库中
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="blockName">块名</param>
+            <param name="ents">加入块中的实体列表</param>
+            <returns>返回块表记录的Id</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.InsertBlockReference(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,System.String,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Scale3d,System.Double)">
+            <summary>
+            在AutoCAD图形中插入块参照
+            </summary>
+            <param name="spaceId">块参照要加入的模型空间或图纸空间的Id</param>
+            <param name="layer">块参照要加入的图层名</param>
+            <param name="blockName">块参照所属的块名</param>
+            <param name="position">插入点</param>
+            <param name="scale">缩放比例</param>
+            <param name="rotateAngle">旋转角度</param>
+            <returns>返回块参照的Id</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.InsertBlockReference(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,System.String,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Scale3d,System.Double,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            在AutoCAD图形中插入块参照
+            </summary>
+            <param name="spaceId">块参照要加入的模型空间或图纸空间的Id</param>
+            <param name="layer">块参照要加入的图层名</param>
+            <param name="blockName">块参照所属的块名</param>
+            <param name="position">插入点</param>
+            <param name="scale">缩放比例</param>
+            <param name="rotateAngle">旋转角度</param>
+            <param name="attNameValues">属性的名称与取值</param>
+            <returns>返回块参照的Id</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.UpdateAttributesInBlock(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            更新块参照中的属性值
+            </summary>
+            <param name="blockRefId">块参照的Id</param>
+            <param name="attNameValues">需要更新的属性名称与取值</param>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetAttributesInBlock(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            获取指定名称的块参照的属性名和属性值
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="blockName">块名</param>
+            <returns>返回块参照的属性名和属性值</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetAttributesInBlockReference(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            获取块参照的属性名和属性值
+            </summary>
+            <param name="blockReferenceId">块参照的Id</param>
+            <returns>返回块参照的属性名和属性值</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetAttributeInBlockReference(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String)">
+            <summary>
+            获取指定名称的块属性值
+            </summary>
+            <param name="blockReferenceId">块参照的Id</param>
+            <param name="attributeName">属性名</param>
+            <returns>返回指定名称的块属性值</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetAllBlockReferences(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            获取指定块名的块参照
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="blockName">块名</param>
+            <returns>返回指定块名的块参照</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetAllDynBlockReferences(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            返回指定块名的动态块参照
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="blockName">动态块的块名</param>
+            <returns>返回指定块名的动态块参照</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.ImportBlocksFromDwg(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            导入外部文件中的块
+            </summary>
+            <param name="destDb">目标数据库</param>
+            <param name="sourceFileName">包含完整路径的外部文件名</param>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetBlockName(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            获取块参照的块名（包括动态块）
+            </summary>
+            <param name="id">块参照的Id</param>
+            <returns>返回块名</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetBlockName(Autodesk.AutoCAD.DatabaseServices.BlockReference)">
+            <summary>
+            获取块参照的块名（包括动态块）
+            </summary>
+            <param name="bref">块参照</param>
+            <returns>返回块名</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.AddAttsToBlock(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.AttributeDefinition})">
+            <summary>
+            为块表记录添加属性
+            </summary>
+            <param name="blockId">块表记录的Id</param>
+            <param name="atts">要加入的块属性列表</param>
+        </member>
+        <member name="M:DotNetARX.BlockTools.AddAttsToBlock(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.DatabaseServices.AttributeDefinition[])">
+            <summary>
+            为块表记录添加属性
+            </summary>
+            <param name="blockId">块表记录的Id</param>
+            <param name="atts">要加入的块属性列表</param>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetDynBlockValue(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String)">
+            <summary>
+            获取动态块的动态属性值
+            </summary>
+            <param name="blockId">动态块的Id</param>
+            <param name="propName">需要查找的动态属性名</param>
+            <returns>返回指定动态属性的值</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.GetDynProperties(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            获得动态块的所有动态属性
+            </summary>
+            <param name="blockId">动态块的Id</param>
+            <returns>返回动态块的所有属性</returns>
+        </member>
+        <member name="M:DotNetARX.BlockTools.SetDynBlockValue(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,System.Object)">
+            <summary>
+            设置动态块的动态属性
+            </summary>
+            <param name="blockId">动态块的ObjectId</param>
+            <param name="propName">动态属性的名称</param>
+            <param name="value">动态属性的值</param>
+        </member>
+        <member name="T:DotNetARX.CircleTools">
+            <summary>
+            简化圆操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.CircleTools.CreateCircle(Autodesk.AutoCAD.DatabaseServices.Circle,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            两点创建圆
+            </summary>
+            <param name="circle">圆对象</param>
+            <param name="startPoint">起点</param>
+            <param name="endPoint">终点</param>
+        </member>
+        <member name="M:DotNetARX.CircleTools.CreateCircle(Autodesk.AutoCAD.DatabaseServices.Circle,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            三点法创建圆
+            </summary>
+            <param name="circle">圆对象</param>
+            <param name="pt1">第一点</param>
+            <param name="pt2">第二点</param>
+            <param name="pt3">第三点</param>
+            <returns>若成功创建圆，则返回true，否则返回false</returns>
+        </member>
+        <member name="T:DotNetARX.ResBufCode">
+            <summary>
+            用于ADSRX库函数（如acedCmd）输入参数的类型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Norm">
+            <summary>
+            用户输入值有效
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.None">
+            <summary>
+            没有结果
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Real">
+            <summary>
+            实数
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Point2d">
+            <summary>
+            2维点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Short">
+            <summary>
+            短整型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Angle">
+            <summary>
+            角度
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.ObjectId">
+            <summary>
+            实体Id
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.PickSet">
+            <summary>
+            选择集名
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Orientation">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Point3d">
+            <summary>
+            三维点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Long">
+            <summary>
+            长整数
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Void">
+            <summary>
+            空白符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.ListBegin">
+            <summary>
+            列表开始
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.ListEnd">
+            <summary>
+            列表结束
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.DottedPair">
+            <summary>
+            点对
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Nil">
+            <summary>
+            空
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.DXF0">
+            <summary>
+            DXF为的0的组码
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.TAtom">
+            <summary>
+            T atom 
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Resbuf">
+            <summary>
+            resbuf
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ResBufCode.Modeless">
+            <summary>
+            无模式对话框
+            </summary>
+        </member>
+        <member name="T:DotNetARX.CommandTools">
+            <summary>
+             命令工具类，用来封装COM、C++中的调用AutoCAD命令的函数。
+            </summary>
+        </member>
+        <member name="M:DotNetARX.CommandTools.SendCommand(Autodesk.AutoCAD.ApplicationServices.Document,System.String[])">
+            <summary>
+            调用COM的SendCommand函数
+            </summary>
+            <param name="doc">文档对象</param>
+            <param name="args">命令参数列表</param>
+        </member>
+        <member name="M:DotNetARX.CommandTools.PostCommand(Autodesk.AutoCAD.EditorInput.Editor,System.String)">
+            <summary>
+            调用C++的acedPostCommand函数
+            </summary>
+            <param name="ed">无意义，只是为了定义扩展函数</param>
+            <param name="expression">要执行的命令字符串</param>
+        </member>
+        <member name="M:DotNetARX.CommandTools.QueueExpression(Autodesk.AutoCAD.EditorInput.Editor,System.String)">
+            <summary>
+            调用C++的ads_queueexpr函数
+            </summary>
+            <param name="ed">无意义，只是为了定义扩展函数</param>
+            <param name="expression">要执行的命令字符串</param>
+        </member>
+        <member name="M:DotNetARX.CommandTools.AcedCmd(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.DatabaseServices.ResultBuffer)">
+            <summary>
+            调用C++的acedCmd函数
+            </summary>
+            <param name="ed">无意义，只是为了定义扩展函数</param>
+            <param name="args">命令参数列表</param>
+            <returns>返回命令执行的状态</returns>
+        </member>
+        <member name="T:DotNetARX.FontStyle">
+            <summary>
+            文字的字体样式
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontStyle.Regular">
+            <summary>
+            常规
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontStyle.Italic">
+            <summary>
+            斜体
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontStyle.Bold">
+            <summary>
+            加粗
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontStyle.BoldItalic">
+            <summary>
+            加粗斜体
+            </summary>
+        </member>
+        <member name="T:DotNetARX.AlignmentPointAcquisition">
+            <summary>
+            如何获取自动对齐点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.AlignmentPointAcquisition.Automatic">
+            <summary>
+            自动获取自动对齐点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.AlignmentPointAcquisition.ShiftToAcquire">
+            <summary>
+            用户必须使用shift键获取自动对齐点
+            </summary>
+        </member>
+        <member name="T:DotNetARX.ARXDemandLoad">
+            <summary>
+            指定若图形包含第三方应用程序所创建的自定义对象时，是否以及何时由 AutoCAD 按需加载该应用程序
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ARXDemandLoad.Disabled">
+            <summary>
+            关闭按需加载
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ARXDemandLoad.OnObjectDetect">
+            <summary>
+            在打开包含自定义对象的图形时按需加载源应用程序
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ARXDemandLoad.CmdInvoke">
+            <summary>
+            在调用应用程序的某个命令时按需加载源应用程序
+            </summary>
+        </member>
+        <member name="T:DotNetARX.XRefDemandLoad">
+            <summary>
+            指定外部参照对象的按需加载性能
+            </summary>
+        </member>
+        <member name="F:DotNetARX.XRefDemandLoad.Disabled">
+            <summary>
+            关闭按需加载，加载整个参照图形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.XRefDemandLoad.LoadEnabled">
+            <summary>
+            打开按需加载来提高AutoCAD性能
+            </summary>
+        </member>
+        <member name="F:DotNetARX.XRefDemandLoad.EnabledWithCopy">
+            <summary>
+            打开按需加载但使用参照图形的临时副本
+            </summary>
+        </member>
+        <member name="T:DotNetARX.ProxyImage">
+            <summary>
+            控制图形中由第三方应用程序所创建对象的显示
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ProxyImage.NotShow">
+            <summary>
+            不显示代理对象
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ProxyImage.Show">
+            <summary>
+            显示所有代理对象的图形图像
+            </summary>
+        </member>
+        <member name="F:DotNetARX.ProxyImage.BoundingBox">
+            <summary>
+            仅显示所有代理对象的边框
+            </summary>
+        </member>
+        <member name="T:DotNetARX.SaveAsType">
+            <summary>
+            指定图形的保存类型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.acR14_dwg">
+            <summary>
+            AutoCAD R14 DWG (*.dwg)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2000_dwg">
+            <summary>
+            AutoCAD 2000 DWG (*.dwg)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2000_dxf">
+            <summary>
+            AutoCAD 2000 DXF (*.dxf)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2000_Template">
+            <summary>
+            AutoCAD 2000 图形样板文件 (*.dwt)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2004_dwg">
+            <summary>
+            AutoCAD 2004 DWG (*.dwg)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2004_dxf">
+            <summary>
+            AutoCAD 2004 DXF (*.dxf)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2004_Template">
+            <summary>
+            AutoCAD 2004 图形样板文件 (*.dwt)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2007_dwg">
+            <summary>
+            AutoCAD 2007 DWG (*.dwg)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2007_dxf">
+            <summary>
+            AutoCAD 2007 DXF (*.dxf)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2007_Template">
+            <summary>
+            AutoCAD 2007 图形样板文件 (*.dwt)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2010_dwg">
+            <summary>
+            AutoCAD 2010 DWG (*.dwg)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2010_dxf">
+            <summary>
+            AutoCAD 2010 DXF (*.dxf)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.ac2010_Template">
+            <summary>
+            AutoCAD 2010 图形样板文件 (*.dwt)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.acNative">
+            <summary>
+            与当前图形版本格式相同
+            </summary>
+        </member>
+        <member name="F:DotNetARX.SaveAsType.acUnknown">
+            <summary>
+            图形类型未知或无效
+            </summary>
+        </member>
+        <member name="T:DotNetARX.OleQuality">
+            <summary>
+            指定OLE对象的打印质量 
+            </summary>
+        </member>
+        <member name="F:DotNetARX.OleQuality.LineArt">
+            <summary>
+            线条
+            </summary>
+        </member>
+        <member name="F:DotNetARX.OleQuality.Text">
+            <summary>
+            文字
+            </summary>
+        </member>
+        <member name="F:DotNetARX.OleQuality.Graphics">
+            <summary>
+            图形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.OleQuality.Photo">
+            <summary>
+            照片
+            </summary>
+        </member>
+        <member name="F:DotNetARX.OleQuality.HighPhoto">
+            <summary>
+            高质量照片
+            </summary>
+        </member>
+        <member name="T:DotNetARX.PlotPolicy">
+            <summary>
+            确定在创建新图形时对象颜色属性是否与打印样式名称关联
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PlotPolicy.Legacy">
+            <summary>
+            为新图形或早期的AutoCAD版本下的图形指定颜色相关打印样式
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PlotPolicy.Named">
+            <summary>
+            为新图形或早期的AutoCAD版本下的图形指定命名打印样式
+            </summary>
+        </member>
+        <member name="T:DotNetARX.PrinterSpoolAlert">
+            <summary>
+            指定当由于I/O 端口冲突造成向设备的输出必须通过系统打印机缓冲时是否警告用户
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PrinterSpoolAlert.AlwaysAlert">
+            <summary>
+            始终警告并创建错误日志
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PrinterSpoolAlert.AlertOnce">
+            <summary>
+            仅第一次警告但创建所有错误日志
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PrinterSpoolAlert.NeverAlertLogOnce">
+            <summary>
+            从不警告但创建所有错误日志
+            </summary>
+        </member>
+        <member name="F:DotNetARX.PrinterSpoolAlert.NeverAlert">
+            <summary>
+            从不警告也从不创建任何错误日志
+            </summary>
+        </member>
+        <member name="T:DotNetARX.InsertUnits">
+            <summary>
+            确定在 AutoCAD 设计中心源图形未分配插入单位的对象自动使用的单位
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Unitless">
+            <summary>
+            不指定（无单位）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Inches">
+            <summary>
+            英寸
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Feet">
+            <summary>
+            英尺
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Miles">
+            <summary>
+            英里
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Millimeters">
+            <summary>
+            毫米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Centimeters">
+            <summary>
+            厘米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Meters">
+            <summary>
+            米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Kilometers">
+            <summary>
+            公里
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Microinches">
+            <summary>
+            微英寸
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Mils">
+            <summary>
+            英里
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Yards">
+            <summary>
+            码
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Angstroms">
+            <summary>
+            埃
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Nanometers">
+            <summary>
+            纳米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Microns">
+            <summary>
+            微米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Decimeters">
+            <summary>
+            分米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Decameters">
+            <summary>
+            十米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Hectometers">
+            <summary>
+            百米
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Gigameters">
+            <summary>
+            百万公里
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.AstronomicalUnits">
+            <summary>
+            天文单位
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.LightYears">
+            <summary>
+            光年
+            </summary>
+        </member>
+        <member name="F:DotNetARX.InsertUnits.Parsecs">
+            <summary>
+            秒差距
+            </summary>
+        </member>
+        <member name="T:DotNetARX.KeyboardAccelerator">
+            <summary>
+            指定 Windows 标准或 AutoCAD 传统快捷键
+            </summary>
+        </member>
+        <member name="F:DotNetARX.KeyboardAccelerator.PreferenceClassic">
+            <summary>
+            使用 AutoCAD 传统键盘设置
+            </summary>
+        </member>
+        <member name="F:DotNetARX.KeyboardAccelerator.PreferenceCustom">
+            <summary>
+            使用 Windows 标准键盘设置
+            </summary>
+        </member>
+        <member name="T:DotNetARX.KeyboardPriority">
+            <summary>
+            控制 AutoCAD 如何响应坐标数据的输入
+            </summary>
+        </member>
+        <member name="F:DotNetARX.KeyboardPriority.RunningObjSnap">
+            <summary>
+            当输入坐标时，严格遵照对象捕捉模式
+            </summary>
+        </member>
+        <member name="F:DotNetARX.KeyboardPriority.Entry">
+            <summary>
+            当输入坐标时，严格遵照键盘输入模式
+            </summary>
+        </member>
+        <member name="F:DotNetARX.KeyboardPriority.EntryExceptScripts">
+            <summary>
+            当输入坐标时，严格按照键盘输入模式。但当坐标是通过脚本输入时，遵照对象捕捉模式
+            </summary>
+        </member>
+        <member name="T:DotNetARX.DrawingAreaSCMCommand">
+            <summary>
+            决定处于命令模式 (有一个命令正在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMCommand.Enter">
+            <summary>
+            禁用命令快捷菜单,结果为当命令期间按右键为回车
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMCommand.EnableSCM">
+            <summary>
+            启用命令快捷菜单
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMCommand.EnableSCMOptions">
+            <summary>
+            只在命令行提示中选项当前有效时启用命令快捷菜单。在命令行提示中，选项是在方括号[]中。如果没有有效的选项，右键为回车
+            </summary>
+        </member>
+        <member name="T:DotNetARX.DrawingAreaSCMDefault">
+            <summary>
+            决定处于默认模式 (未选中对象且无命令在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMDefault.RepeatLastCommand">
+            <summary>
+            禁用默认快捷菜单
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMDefault.SCM">
+            <summary>
+            启用默认快捷菜单
+            </summary>
+        </member>
+        <member name="T:DotNetARX.DrawingAreaSCMEdit">
+            <summary>
+            决定处于编辑模式 (选中一个或多个对象且无命令在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMEdit.EdRepeatLastCommand">
+            <summary>
+            禁用编辑快捷菜单
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DrawingAreaSCMEdit.EdSCM">
+            <summary>
+            启用编辑快捷菜单
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences">
+            <summary>
+            封装COM的Preferences类，该类指定当前 AutoCAD 设置
+            </summary>
+        </member>
+        <member name="M:DotNetARX.Preferences.GetProperties(System.String,System.String)">
+            <summary>
+            获取“选项”对话框对应选项卡上选项的属性值
+            </summary>
+            <param name="ProjectName">选项卡名称</param>
+            <param name="PropertyName">属性名称</param>
+            <returns>返回选项的属性值</returns>
+        </member>
+        <member name="M:DotNetARX.Preferences.SetProperties(System.String,System.String,System.Object)">
+            <summary>
+            设置“选项”对话框对应选项卡上选项的属性值
+            </summary>
+            <param name="ProjectName">选项卡名称</param>
+            <param name="PropertyName">属性名称</param>
+            <param name="Value">属性值</param>
+            <returns>如果属性设置成功，则返回true，否则返回false</returns>
+        </member>
+        <member name="T:DotNetARX.Preferences.Display">
+            <summary>
+            “选项”对话框“显示”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.AutoTrackingVecColor">
+            <summary>
+            获取或设置自动追踪矢量的颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.CursorSize">
+            <summary>
+            获取或设置十字光标的大小（屏幕大小的百分比）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.DisplayLayoutTabs">
+            <summary>
+            获取或设置是否在图形编辑器中显示模型和布局选项卡
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.DisplayScreenMenu">
+            <summary>
+            获取或设置是否在图形窗口的右边显示屏幕菜单。
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.DisplayScrollBars">
+            <summary>
+            获取或设置是否在图形窗口的下边和右边显示滚动条
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.DockedVisibleLines">
+            <summary>
+            获取或设置命令窗口所显示的文字行数
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.GraphicsWinLayoutBackgrndColor">
+            <summary>
+            获取或设置图纸空间布局的背景颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.GraphicsWinModelBackgrndColor">
+            <summary>
+            获取或设置模型空间窗口的背景颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.HistoryLines">
+            <summary>
+            获取或设置保留在内存中的文本窗口中的文字行数
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.ImageFrameHighlight">
+            <summary>
+            获取或设置是否在选择过程中显示光栅图像
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutCreateViewport">
+            <summary>
+            获取或设置是否自动为新布局创建视口
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutCrosshairColor">
+            <summary>
+            获取或设置图纸空间布局中十字光标和文字的颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutDisplayMargins">
+            <summary>
+            获取或设置是否在布局中显示页边距
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutDisplayPaper">
+            <summary>
+            获取或设置是否在布局中显示图纸背景
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutDisplayPaperShadow">
+            <summary>
+            获取或设置是否在布局中显示图纸背景阴影
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.LayoutShowPlotSetup">
+            <summary>
+            获取或设置是否在创建新布局时显示“打印设置”对话框
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.MaxAutoCADWindow">
+            <summary>
+            获取或设置在AutoCAD 启动时是否布满整个屏幕
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.ModelCrosshairColor">
+            <summary>
+            获取或设置模型空间十字光标和文字的颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.ShowRasterImage">
+            <summary>
+            获取或设置是否在实时平移和缩放时显示光栅图像
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TextFontSize">
+            <summary>
+            获取或设置文字的字号
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TextFont">
+            <summary>
+            获取或设置文字的字体
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TextFontStyle">
+            <summary>
+            获取或设置文字的字体样式
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TextWinBackgrndColor">
+            <summary>
+            获取或设置文本窗口的背景颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TextWinTextColor">
+            <summary>
+            获取或设置文本窗口的文字颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.TrueColorImages">
+            <summary>
+            获取或设置是否以真彩色显示光栅和渲染图像
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Display.XRefFadeIntensity">
+            <summary>
+            获取或设置照对象的褪色度百分比
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.Files">
+            <summary>
+            “选项”对话框“文件”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.ActiveProfile">
+            <summary>
+            获取或设置AutoCAD 进程的活动配置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.AltFontFile">
+            <summary>
+            当 AutoCAD 找不到源字体并且字体映射文件中未指定替换字体时所使用的字体文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.AltTabletMenuFile">
+            <summary>
+            获取或设置与标准 AutoCAD 数字化仪菜单交换的替换菜单的路径
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.AutoSavePath">
+            <summary>
+            获取或设置自动保存所创建文件的路径
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.ColorBookPath">
+            <summary>
+            获取或设置配色系统路径
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.ConfigFile">
+            <summary>
+            获取或设置用于保存硬件设备驱动程序信息的配置文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.CustomDictionary">
+            <summary>
+            获取或设置自定义词典
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.DefaultInternetURL">
+            <summary>
+            获取或设置默认 Internet 地址
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.DriversPath">
+            <summary>
+            获取或设置AutoCAD 查找视频显示、定点设备、打印机和绘图仪所用 ADI 设备驱动程序的目录
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.FontFileMap">
+            <summary>
+            获取或设置用于定义当 AutoCAD 不能找到字体时替换字体的文件位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.HelpFilePath">
+            <summary>
+            获取或设置AutoCAD 帮助文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.LogFilePath">
+            <summary>
+            获取或设置日志文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.MainDictionary">
+            <summary>
+            获取或设置用于拼写检查的当前词典
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.MenuFile">
+            <summary>
+            获取或设置进程的 AutoCAD 菜单或自定义文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PageSetupOverridesTemplateFile">
+            <summary>
+            获取或设置页面设置中的替代样板文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PlotLogFilePath">
+            <summary>
+            获取或设置打印日志文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PostScriptPrologFile">
+            <summary>
+            获取或设置acad.psf 文件中自定义前导部分的名称
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrinterConfigPath">
+            <summary>
+            获取或设置打印机配置文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrinterDescPath">
+            <summary>
+            获取或设置打印机描述文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrinterStyleSheetPath">
+            <summary>
+            获取或设置打印机样式表文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrintFile">
+            <summary>
+            获取或设置用作临时打印文件名的替换名称
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrintSpoolerPath">
+            <summary>
+            获取或设置后台打印文件的目录
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.PrintSpoolExecutable">
+            <summary>
+            获取或设置用于后台打印的应用程序
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.QNewTemplateFile">
+            <summary>
+            获取或设置QNew命令的图形样板文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.SupportPath">
+            <summary>
+            获取或设置AutoCAD 搜索支持文件的目录
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.TempFilePath">
+            <summary>
+            获取或设置AutoCAD用于保存临时文件的目录
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.TemplateDWGPath">
+            <summary>
+            获取或设置“启动”向导所使用样板文件的路径
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.TempXRefPath">
+            <summary>
+            获取或设置外部参照文件的位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.TextEditor">
+            <summary>
+            获取或设置MTEXT 命令所使用文字编辑器的名称
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.TextureMapPath">
+            <summary>
+            获取或设置AutoCAD 搜索渲染纹理贴图的目录
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.ToolPalettePath">
+            <summary>
+            获取或设置工具选项板路径
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Files.WorkspacePath">
+            <summary>
+            获取或设置工作空间文件的路径
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.Drafting">
+            <summary>
+            “选项”对话框“绘图”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AlignmentPointAcquisition">
+            <summary>
+            获取或设置获取自动对齐点的方式
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapAperture">
+            <summary>
+            获取或设置是否显示自动捕捉靶框
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapApertureSize">
+            <summary>
+            获取或设置自动捕捉靶框的大小
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapMagnet">
+            <summary>
+            获取或设置是否打开自动捕捉磁吸
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapMarker">
+            <summary>
+            获取或设置是否打开自动捕捉标记
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapMarkerColor">
+            <summary>
+            获取或设置自动捕捉标记的颜色
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapMarkerSize">
+            <summary>
+            获取或设置自动捕捉标记的大小
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoSnapToolTip">
+            <summary>
+            获取或设置是否打开自动捕捉工具提示
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.AutoTrackTooltip">
+            <summary>
+            获取或设置是否打开自动追踪工具提示
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.FullScreenTrackingVector">
+            <summary>
+            获取或设置是否打开全屏追踪矢量
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Drafting.PolarTrackingVector">
+            <summary>
+            获取或设置是否打开极轴追踪矢量
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.OpenSave">
+            <summary>
+            “选项”对话框“打开和保存”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.AutoAudit">
+            <summary>
+            在渲染 DXFIN 或 DTBIN 交换命令后 AutoCAD 是否执行核查
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.AutoSaveInterval">
+            <summary>
+            获取或设置自动保存间隔的分钟数
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.CreateBackup">
+            <summary>
+            获取或设置是否使用备份文件
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.DemandLoadARXApp">
+            <summary>
+            若图形包含第三方应用程序所创建的自定义对象时，是否以及何时由 AutoCAD 按需加载该应用程序
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.FullCRCValidation">
+            <summary>
+            获取或设置是否每次对象被读入图形时都进行循环冗余码校验 (CRC) 
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.IncrementalSavePercent">
+            <summary>
+            获取或设置图形文件中所允许的闲置空间的百分比 
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.LogFileOn">
+            <summary>
+            获取或设置是否将文字窗口的内容写入日志文件 
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.MRUNumber">
+            <summary>
+            获取或设置文件菜单中显示的最近使用文件的数目
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.ProxyImage">
+            <summary>
+            获取或设置图形中由第三方应用程序所创建对象的显示
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.SaveAsType">
+            <summary>
+            获取或设置图形的保存类型
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.SavePreviewThumbnail">
+            <summary>
+            获取或设置是否与图形一起保存 BMP 预览图像
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.ShowProxyDialogBox">
+            <summary>
+            当用户打开包含自定义对象的图形时 AutoCAD 是否显示警告信息
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.TempFileExtension">
+            <summary>
+            获取或设置临时文件的扩展名
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.OpenSave.XRefDemandLoad">
+            <summary>
+            获取或设置外部参照对象的按需加载性能
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.Output">
+            <summary>
+            “选项”对话框“打印和发布”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.AutomaticPlotLog">
+            <summary>
+            获取或设置是否自动生成打印日志
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.ContinuousPlotLog">
+            <summary>
+            获取或设置是否连续生成打印日志
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.DefaultOutputDevice">
+            <summary>
+            获取或设置布局和模型空间的默认输出设备
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.DefaultPlotToFilePath">
+            <summary>
+            获取或设置打印到文件的缺省位置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.DefaultPlotStyleForLayer">
+            <summary>
+            获取或设置图形或用早期版本的 AutoCAD 创建且未用 AutoCAD 2000 格式保存的图形中的图层0的默认打印样式
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.DefaultPlotStyleForObjects">
+            <summary>
+            获取或设置新创建对象的默认打印样式名称
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.OLEQuality">
+            <summary>
+            获取或设置OLE对象的打印质量
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.PlotLegacy">
+            <summary>
+            获取或设置是否允许运行传统打印脚本
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.PlotPolicy">
+            <summary>
+            获取或设置在创建新图形时对象颜色属性是否与打印样式名称关联
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.PrinterPaperSizeAlert">
+            <summary>
+            获取或设置当布局配置的页面尺寸与PC3文件的默认设置不同时是否提醒用户
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.PrinterSpoolAlert">
+            <summary>
+            获取或设置当由于I/O 端口冲突造成向设备的输出必须通过系统打印机缓冲时是否警告用户
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Output.UseLastPlotSettings">
+            <summary>
+            获取或设置是否使用最后一次成功打印时的打印设置
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.Selection">
+            <summary>
+            “选项”对话框“选择集”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.DisplayGrips">
+            <summary>
+            获取或设置是否显示夹点
+            </summary>        
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.DisplayGripsWithinBlocks">
+            <summary>
+            获取或设置是否在块中显示夹点
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.GripColorSelected">
+            <summary>
+            获取或设置选定夹点的颜色
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.GripColorUnselected">
+            <summary>
+            获取或设置未选中夹点的颜色
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.GripSize">
+            <summary>
+            获取或设置夹点的大小
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickAdd">
+            <summary>
+            获取或设置对象是否要使用 Shift 键加入选择集
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickAuto">
+            <summary>
+            获取或设置在选择对象提示下是否自动显示选择窗口
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickBoxSize">
+            <summary>
+            获取或设置对象拾取框的大小
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickDrag">
+            <summary>
+            获取或设置绘制选择窗口的方式
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickFirst">
+            <summary>
+            获取或设置在发出命令之前（先选择后执行）还是之后选择对象
+            </summary> 
+        </member>
+        <member name="P:DotNetARX.Preferences.Selection.PickGroup">
+            <summary>
+            获取或设置是否在选择组合中的单个对象时将整个组合都选中
+            </summary> 
+        </member>
+        <member name="T:DotNetARX.Preferences.System">
+            <summary>
+            “选项”对话框“系统”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.BeepOnError">
+            <summary>
+            获取或设置AutoCAD 检测到无效输入时是否音响提示
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.DisplayOLEScale">
+            <summary>
+            获取或设置当图形中插入 OLE 对象时是否显示 OLE 缩放对话框
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.EnableStartupDialog">
+            <summary>
+            获取或设置当 AutoCAD 启动时或新图创建时是否显示开始对话框
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.LoadAcadLspInAllDocuments">
+            <summary>
+            获取或设置acad.lsp 是在启动时加载还是每一图形均加载
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.ShowWarningMessages">
+            <summary>
+            获取或设置是否隐藏消息设置
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.StoreSQLIndex">
+            <summary>
+            获取或设置是否在图形文件中保存链接索引
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.System.TablesReadOnly">
+            <summary>
+            获取或设置是否以只读模式打开表格
+            </summary>
+        </member>
+        <member name="T:DotNetARX.Preferences.User">
+            <summary>
+            “选项”对话框“用户系统配置”选项卡的所有选项
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.ADCInsertUnitsDefaultSource">
+            <summary>
+            获取或设置在AutoCAD设计中心源图形未分配插入单位的对象自动使用的单位
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.ADCInsertUnitsDefaultTarget">
+            <summary>
+            获取或设置在AutoCAD设计中心目标图形未分配插入单位的对象自动使用的单位
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.HyperlinkDisplayCursor">
+            <summary>
+            获取或设置是否显示超链接光标和快捷菜单
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.HyperlinkDisplayTooltip">
+            <summary>
+            获取或设置是否显示超链接工具提示
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.KeyboardAccelerator">
+            <summary>
+            获取或设置Windows 标准或 AutoCAD 传统快捷键
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.KeyboardPriority">
+            <summary>
+            获取或设置AutoCAD 如何响应坐标数据的输入
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.SCMCommandMode">
+            <summary>
+            获取或设置处于命令模式 (有一个命令正在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.SCMDefaultMode">
+            <summary>
+            获取或设置处于默认模式 (未选中对象且无命令在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.SCMEditMode">
+            <summary>
+            获取或设置处于编辑模式 (选中一个或多个对象且无命令在执行) 时绘图区域中右键单击的功能
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.SCMTimeMode">
+            <summary>
+            获取或设置是否开启计时右键动作
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.SCMTimeValue">
+            <summary>
+            获取或设置设置按持续时间显示快捷菜单来控制计时右键动作
+            </summary>
+        </member>
+        <member name="P:DotNetARX.Preferences.User.ShortCutMenuDisplay">
+            <summary>
+            获取或设置在图形区域右键点击时显示快捷菜单还是执行回车
+            </summary>
+        </member>
+        <member name="T:DotNetARX.CUITools">
+            <summary>
+            操作CUI的类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.CUITools.GetMainCustomizationSection(Autodesk.AutoCAD.ApplicationServices.Document)">
+            <summary>
+            获取并打开主CUI文件
+            </summary>
+            <param name="doc">AutoCAD文档对象</param>
+            <returns>返回主CUI文件</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddCui(Autodesk.AutoCAD.ApplicationServices.Document,System.String,System.String)">
+            <summary>
+            创建局部CUI文件
+            </summary>
+            <param name="doc">AutoCAD文档对象</param>
+            <param name="cuiFile">CUI文件名</param>
+            <param name="menuGroupName">菜单组的名称</param>
+            <returns>返回创建的CUI文件</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.LoadCui(Autodesk.AutoCAD.Customization.CustomizationSection)">
+            <summary>
+            装载指定的局部CUI文件
+            </summary>
+            <param name="cs">CUI文件</param>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddMacro(Autodesk.AutoCAD.Customization.CustomizationSection,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            添加菜单项所要执行的宏
+            </summary>
+            <param name="source">CUI文件</param>
+            <param name="name">宏的显示名称</param>
+            <param name="command">宏的具体命令</param>
+            <param name="tag">宏的标识符</param>
+            <param name="helpString">宏的状态栏提示信息</param>
+            <param name="imagePath">宏的图标</param>
+            <returns>返回创建的宏</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddPopMenu(Autodesk.AutoCAD.Customization.MenuGroup,System.String,System.Collections.Specialized.StringCollection,System.String)">
+            <summary>
+            添加下拉菜单
+            </summary>
+            <param name="menuGroup">包含菜单的菜单组</param>
+            <param name="name">菜单名</param>
+            <param name="aliasList">菜单的别名</param>
+            <param name="tag">菜单的标识字符串</param>
+            <returns>返回下拉菜单对象</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddMenuItem(Autodesk.AutoCAD.Customization.PopMenu,System.Int32,System.String,System.String)">
+            <summary>
+            为菜单添加菜单项
+            </summary>
+            <param name="parentMenu">菜单项所属的菜单</param>
+            <param name="index">菜单项的位置</param>
+            <param name="name">菜单项的显示名称</param>
+            <param name="macroId">菜单项的命令宏的Id</param>
+            <returns>返回添加的菜单项</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddSubMenu(Autodesk.AutoCAD.Customization.PopMenu,System.Int32,System.String,System.String)">
+            <summary>
+            为下拉菜单添加子菜单
+            </summary>
+            <param name="parentMenu">下拉菜单</param>
+            <param name="index">子菜单的位置</param>
+            <param name="name">子菜单的显示名称</param>
+            <param name="tag">子菜单的标识字符串</param>
+            <returns>返回添加的子菜单</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddSeparator(Autodesk.AutoCAD.Customization.PopMenu,System.Int32)">
+            <summary>
+            为菜单添加分隔条
+            </summary>
+            <param name="parentMenu">下拉菜单</param>
+            <param name="index">分隔条的位置</param>
+            <returns>返回添加的分隔条</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddToolbar(Autodesk.AutoCAD.Customization.MenuGroup,System.String)">
+            <summary>
+            添加工具栏
+            </summary>
+            <param name="menuGroup">工具栏所属的菜单组</param>
+            <param name="name">工具栏的显示名称</param>
+            <returns>返回添加的工具栏</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AddToolbarButton(Autodesk.AutoCAD.Customization.Toolbar,System.Int32,System.String,System.String)">
+            <summary>
+            向工具栏添加按钮
+            </summary>
+            <param name="parent">按钮所属的工具栏</param>
+            <param name="index">按钮在工具栏上的位置</param>
+            <param name="name">按钮的显示名称</param>
+            <param name="macroId">按钮的命令宏的Id</param>
+            <returns>返回工具栏按钮对象</returns>
+        </member>
+        <member name="M:DotNetARX.CUITools.AttachToolbarToFlyout(Autodesk.AutoCAD.Customization.Toolbar,System.Int32,Autodesk.AutoCAD.Customization.Toolbar)">
+            <summary>
+            向工具栏添加弹出式工具栏
+            </summary>
+            <param name="parent">工具栏所属的父工具栏</param>
+            <param name="index">弹出式工具栏在父工具栏上的位置</param>
+            <param name="toolbarRef">弹出式工具栏所引用的工具栏</param>
+        </member>
+        <member name="T:DotNetARX.DictTools">
+            <summary>
+            字典操作类，包括扩展字典与有名对象字典
+            </summary>
+        </member>
+        <member name="M:DotNetARX.DictTools.AddXrecord(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,DotNetARX.TypedValueList)">
+            <summary>
+            添加扩展记录
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="searchKey">扩展记录名称</param>
+            <param name="values">扩展记录的内容</param>
+            <returns>返回添加的扩展记录的Id</returns>
+        </member>
+        <member name="M:DotNetARX.DictTools.GetXrecord(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String)">
+            <summary>
+            获取扩展记录
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="searchKey">扩展记录名称</param>
+            <returns>返回扩展记录的内容</returns>
+        </member>
+        <member name="M:DotNetARX.DictTools.AddNamedDictionary(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            添加有名对象字典项
+            </summary>
+            <param name="db">数据库</param>
+            <param name="searchKey">有名对象字典项的名称</param>
+            <returns>返回添加的有名对象字典项的Id</returns>
+        </member>
+        <member name="T:DotNetARX.DimStyleTools">
+            <summary>
+            标注样式操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.DimStyleTools.AddDimStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            创建一个新的标注样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">标注样式名</param>
+            <returns>返回新建的标注样式的Id</returns>
+        </member>
+        <member name="T:DotNetARX.DimFormatCode">
+            <summary>
+            与公差标注有关的特殊格式代码
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Angular">
+            <summary>
+            倾斜度（∠）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.VerticalLine">
+            <summary>
+            垂直度（⊥）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Flatness">
+            <summary>
+            平面度（◇）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.HalfCircleClosed">
+            <summary>
+            面轮廓度（封闭的半圆）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.SingleCircle">
+            <summary>
+            圆度（○）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Parallel">
+            <summary>
+            平行度（∥）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Cylindricity">
+            <summary>
+            圆柱度
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CircularRunout">
+            <summary>
+            圆跳动度（↗）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.SymmetrySymbol">
+            <summary>
+            对称度
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Position">
+            <summary>
+            位置度（⊕）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.HalfCircle">
+            <summary>
+            线轮廓度（⌒）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CircleL">
+            <summary>
+            最小实体要求（带圆圈的L）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CircleM">
+            <summary>
+            最大实体要求（带圆圈的M）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Diameter">
+            <summary>
+            公差直径（φ）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Square">
+            <summary>
+            正方形（□）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CircleP">
+            <summary>
+            延伸公差带（带圆圈的P）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CenterLine">
+            <summary>
+            中心线（C和L重叠）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.TwoCircles">
+            <summary>
+            同轴度（◎）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CircleS">
+            <summary>
+            不考虑特征尺寸（带圆圈的S）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.TotalRunout">
+            <summary>
+            全跳动度（符号为两带箭头的斜线）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Line">
+            <summary>
+            直线度（―）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CounterBore">
+            <summary>
+            机械制图中的柱形沉孔和锪平面孔
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.CounterSink">
+            <summary>
+            机械制图中的埋头孔（∨）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Depth">
+            <summary>
+            机械制图中的沉孔深度
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.ConicalTaper">
+            <summary>
+            锥形接续器符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimFormatCode.Slope">
+            <summary>
+            机械制图中的锥度（⊿）
+            </summary>
+        </member>
+        <member name="T:DotNetARX.DimArrowBlock">
+            <summary>
+            标注中的箭头符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.ClosedFilled">
+            <summary>
+            实心闭合
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Dot">
+            <summary>
+            点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.DotSmall">
+            <summary>
+            小点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.DotBlank">
+            <summary>
+            空心点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Origin">
+            <summary>
+            原点标记
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Origin2">
+            <summary>
+            原点标记2
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Open">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.RightAngle">
+            <summary>
+            直角
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Angle30">
+            <summary>
+            30度角
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Closed">
+            <summary>
+            闭合
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.DotSmallBlank">
+            <summary>
+            空心小点
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Oblique">
+            <summary>
+            倾斜
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.BoxFilled">
+            <summary>
+            实心框
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Box">
+            <summary>
+            框
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.ClosedBlank">
+            <summary>
+            空心闭合
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.TriangleFilled">
+            <summary>
+            实心基准三角形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Triangle">
+            <summary>
+            基准三角形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.Integral">
+            <summary>
+            积分
+            </summary>
+        </member>
+        <member name="F:DotNetARX.DimArrowBlock.ArchitecturalTick">
+            <summary>
+            建筑标记
+            </summary>
+        </member>
+        <member name="T:DotNetARX.LeaderBlockContent">
+            <summary>
+            AutoCAD自带的用于多重引线注释块的名称
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Detail">
+            <summary>
+            详细信息标注
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Box">
+            <summary>
+            方框（□）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Circle">
+            <summary>
+            圆（○）
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Hexagon">
+            <summary>
+            正六边形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Slot">
+            <summary>
+            槽
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LeaderBlockContent.Triangle">
+            <summary>
+            三角形（△）
+            </summary>
+        </member>
+        <member name="T:DotNetARX.DimTools">
+            <summary>
+            标注操作类（含引线、形位公差）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.DimTools.ArrowBlock">
+            <summary>
+            当前尺寸线箭头符号
+            </summary>
+        </member>
+        <member name="M:DotNetARX.DimTools.GetArrowObjectId(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            获取与名称对应的箭头块的ObjectId
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="arrowName">箭头名</param>
+            <returns>返回指定箭头块的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.DimTools.CreateTolerance(Autodesk.AutoCAD.DatabaseServices.FeatureControlFrame,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            设置形位公差值
+            </summary>
+            <param name="frame">形位公差特征控制框对象</param>
+            <param name="geometricSym">几何特征符号，表示公差的几何特征，例如位置、轮廓、形状、方向或跳动</param>
+            <param name="torlerance">公差值</param>
+            <param name="firstDatum">第一级基准要素</param>
+            <param name="secondDatum">第二级基准要素</param>
+            <param name="thirdDatum">第三级基准要素</param>
+        </member>
+        <member name="T:DotNetARX.DocumentTools">
+            <summary>
+            文档操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.DocumentTools.Saved(Autodesk.AutoCAD.ApplicationServices.Document)">
+            <summary>
+            确定文档中是否有未保存的修改。
+            </summary>
+            <param name="doc">文档对象</param>
+            <returns>如果有未保存的修改，则返回true，否则返回false。</returns>
+        </member>
+        <member name="M:DotNetARX.DocumentTools.Save(Autodesk.AutoCAD.ApplicationServices.Document)">
+            <summary>
+            保存已有文档
+            </summary>
+            <param name="doc">文档对象</param>
+        </member>
+        <member name="T:DotNetARX.Draw3DTools">
+            <summary>
+            3D操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddBox(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double,System.Double)">
+            <summary>
+            由角点、长度、宽度和高度在UCS中创建长方体
+            </summary>
+            <param name="cornerPt">角点</param>
+            <param name="lengthX">长度</param>
+            <param name="lengthY">宽度</param>
+            <param name="lengthZ">高度</param>
+            <returns>返回创建的长方体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddCylinder(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double)">
+            <summary>
+            由底面中心点、半径和高度在UCS中创建圆柱体
+            </summary>
+            <param name="bottomCenPt">底面中心点</param>
+            <param name="radius">底面半径</param>
+            <param name="height">高度</param>
+            <returns>返回创建的圆柱体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddCone(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double)">
+            <summary>
+            由底面中心点、半径和高度在UCS中创建圆锥体
+            </summary>
+            <param name="bottomCenPt">底面中心点</param>
+            <param name="radius">底面半径</param>
+            <param name="height">高度</param>
+            <returns>返回创建的圆锥体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddSphere(Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            由中心点和半径在UCS中创建球体
+            </summary>
+            <param name="cenPt">中心点</param>
+            <param name="radius">半径</param>
+            <returns>返回创建的球体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddTorus(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double)">
+            <summary>
+            由中心点、圆环半径和圆管半径在UCS中创建圆环体
+            </summary>
+            <param name="cenPt">中心点</param>
+            <param name="majorRadius">圆环半径</param>
+            <param name="minorRadius">圆管半径</param>
+            <returns>返回创建的圆环体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddWedge(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double,System.Double)">
+            <summary>
+            由角点、长度、宽度和高度在UCS中创建楔体
+            </summary>
+            <param name="cornerPt">角点</param>
+            <param name="lengthAlongX">长度</param>
+            <param name="lengthAlongY">宽度</param>
+            <param name="lengthAlongZ">高度</param>
+            <returns>返回创建的楔体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddPrism(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Int32,System.Double)">
+            <summary>
+            由底面中心点、高度、棱数和底面外接圆半径在UCS中创建棱柱
+            </summary>
+            <param name="bottomCenPt">底面中心点</param>
+            <param name="height">高度</param>
+            <param name="sides">棱数</param>
+            <param name="radius">底面外接圆半径</param>
+            <returns>返回创建的棱柱的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddPyramid(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Int32,System.Double)">
+            <summary>
+            由底面中心点、高度、棱数和底面外接圆半径创建棱锥
+            </summary>
+            <param name="bottomCenPt">底面中心点</param>
+            <param name="height">高度</param>
+            <param name="sides">棱数</param>
+            <param name="radius">底面外接圆半径</param>
+            <returns>返回创建的棱锥的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddExtrudedSolid(Autodesk.AutoCAD.DatabaseServices.Region,System.Double,System.Double)">
+            <summary>
+            由截面面域、拉伸高度和拉伸角度创建拉伸体
+            </summary>
+            <param name="region">截面面域</param>
+            <param name="height">拉伸高度</param>
+            <param name="taperAngle">拉伸角度</param>
+            <returns>返回创建的拉伸体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddExtrudedSolid(Autodesk.AutoCAD.DatabaseServices.Region,Autodesk.AutoCAD.DatabaseServices.Curve,System.Double)">
+            <summary>
+            由截面面域、拉伸路径曲线和拉伸角度创建拉伸体
+            </summary>
+            <param name="region">截面面域</param>
+            <param name="path">拉伸路径曲线</param>
+            <param name="taperAngle">拉伸角度</param>
+            <returns>返回创建的拉伸体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.AddRevolvedSolid(Autodesk.AutoCAD.DatabaseServices.Region,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            由截面面域、旋转轴起点、旋转轴终点和旋转角度创建旋转体
+            </summary>
+            <param name="region">截面面域</param>
+            <param name="axisPt1">旋转轴起点</param>
+            <param name="axisPt2">旋转轴终点</param>
+            <param name="angle">旋转角度</param>
+            <returns>返回创建的旋转体的Id</returns>
+        </member>
+        <member name="M:DotNetARX.Draw3DTools.BoolSolid3dRegion(Autodesk.AutoCAD.DatabaseServices.BooleanOperationType,Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            由布尔操作函数创建三维实体
+            </summary>
+            <param name="boolType">布尔操作类型</param>
+            <param name="solid3dId1">参与操作的三维实体的Id</param>
+            <param name="solid3dId2">参与操作的三维实体的Id</param>
+            <returns>返回创建的三维实体的Id</returns>
+        </member>
+        <member name="T:DotNetARX.EllipseTools">
+            <summary>
+            椭圆操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.EllipseTools.CreateEllipse(Autodesk.AutoCAD.DatabaseServices.Ellipse,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            根据外接矩形创建椭圆
+            </summary>
+            <param name="ellipse">椭圆对象</param>
+            <param name="pt1">外接矩形的角点</param>
+            <param name="pt2">外接矩形的角点</param>
+        </member>
+        <member name="T:DotNetARX.EntTools">
+            <summary>
+            实体操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.EntTools.Move(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            移动实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="sourcePt">移动的源点</param>
+            <param name="targetPt">移动的目标点</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Move(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            移动实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="sourcePt">移动的源点</param>
+            <param name="targetPt">移动的目标点</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Copy(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            复制实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="sourcePt">复制的源点</param>
+            <param name="targetPt">复制的目标点</param>
+            <returns>返回复制实体的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Copy(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            复制实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="sourcePt">复制的源点</param>
+            <param name="targetPt">复制的目标点</param>
+            <returns>返回复制实体的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Rotate(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            旋转实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="basePt">旋转基点</param>
+            <param name="angle">旋转角度</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Rotate(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            旋转实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="basePt">旋转基点</param>
+            <param name="angle">旋转角度</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Scale(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            缩放实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="basePt">缩放基点</param>
+            <param name="scaleFactor">缩放比例</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Scale(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            缩放实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="basePt">缩放基点</param>
+            <param name="scaleFactor">缩放比例</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.Mirror(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.Boolean)">
+            <summary>
+            镜像实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="mirrorPt1">镜像轴的第一点</param>
+            <param name="mirrorPt2">镜像轴的第二点</param>
+            <param name="eraseSourceObject">是否删除源对象</param>
+            <returns>返回镜像实体的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Mirror(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.Boolean)">
+            <summary>
+            镜像实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="mirrorPt1">镜像轴的第一点</param>
+            <param name="mirrorPt2">镜像轴的第二点</param>
+            <param name="eraseSourceObject">是否删除源对象</param>
+            <returns>返回镜像实体的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Offset(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Double)">
+            <summary>
+            偏移实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="dis">偏移距离</param>
+            <returns>返回偏移后的实体Id集合</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Offset(Autodesk.AutoCAD.DatabaseServices.Entity,System.Double)">
+            <summary>
+            偏移实体
+            </summary>
+            <param name="ent">实体</param>
+            <param name="dis">偏移距离</param>
+            <returns>返回偏移后的实体集合</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.ArrayRectang(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            矩形阵列实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="numRows">矩形阵列的行数,该值必须为正数</param>
+            <param name="numCols">矩形阵列的列数,该值必须为正数</param>
+            <param name="disRows">行间的距离</param>
+            <param name="disCols">列间的距离</param>
+            <returns>返回阵列后的实体集合的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.ArrayPolar(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d,System.Int32,System.Double)">
+            <summary>
+            环形阵列实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+            <param name="cenPt">环形阵列的中心点</param>
+            <param name="numObj">在环形阵列中所要创建的对象数量</param>
+            <param name="angle">以弧度表示的填充角度，正值表示逆时针方向旋转，负值表示顺时针方向旋转，如果角度为0则出错</param>
+            <returns>返回阵列后的实体集合的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.EntTools.Erase(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="id">实体的ObjectId</param>
+        </member>
+        <member name="M:DotNetARX.EntTools.GetAllEntsExtent(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            计算图形数据库模型空间中所有实体的包围框
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回模型空间中所有实体的包围框</returns>
+        </member>
+        <member name="T:DotNetARX.GeTools">
+            <summary>
+            几何类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.GeTools.RadianToDegree(System.Double)">
+            <summary>
+            将弧度值转换为角度值
+            </summary>
+            <param name="angle">弧度</param>
+            <returns>返回角度值</returns>
+        </member>
+        <member name="M:DotNetARX.GeTools.DegreeToRadian(System.Double)">
+            <summary>
+            将角度值转换为弧度值
+            </summary>
+            <param name="angle">角度</param>
+            <returns>返回弧度值</returns>
+        </member>
+        <member name="M:DotNetARX.GeTools.PolarPoint(Autodesk.AutoCAD.Geometry.Point3d,System.Double,System.Double)">
+            <summary>
+            获取与给定点指定角度和距离的点
+            </summary>
+            <param name="point">给定点</param>
+            <param name="angle">角度</param>
+            <param name="dist">距离</param>
+            <returns>返回与给定点指定角度和距离的点</returns>
+        </member>
+        <member name="M:DotNetARX.GeTools.MidPoint(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            获取两个点之间的中点
+            </summary>
+            <param name="pt1">第一点</param>
+            <param name="pt2">第二点</param>
+            <returns>返回两个点之间的中点</returns>
+        </member>
+        <member name="M:DotNetARX.GeTools.AngleFromXAxis(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            计算从第一点到第二点所确定的矢量与X轴正方向的夹角
+            </summary>
+            <param name="pt1">第一点</param>
+            <param name="pt2">第二点</param>
+            <returns>返回两点所确定的矢量与X轴正方向的夹角</returns>
+        </member>
+        <member name="T:DotNetARX.GroupTools">
+            <summary>
+            组操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.GroupTools.CreateGroup(Autodesk.AutoCAD.DatabaseServices.Database,System.String,DotNetARX.ObjectIdList)">
+            <summary>
+            创建组
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="groupName">组名</param>
+            <param name="ids">要加入实体的ObjectId集合</param>
+            <returns>返回组的Id</returns>
+        </member>
+        <member name="M:DotNetARX.GroupTools.AppendEntityToGroup(Autodesk.AutoCAD.DatabaseServices.ObjectId,DotNetARX.ObjectIdList)">
+            <summary>
+            向已有组中添加对象
+            </summary>
+            <param name="groupId">组对象的Id</param>
+            <param name="entIds">要加入到组中的实体的ObjectId集合</param>
+        </member>
+        <member name="M:DotNetARX.GroupTools.GetGroups(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            获取实体对象所在的组
+            </summary>
+            <param name="entId">实体的Id</param>
+            <returns>返回实体所在的组</returns>
+        </member>
+        <member name="M:DotNetARX.GroupTools.RemoveGroup(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            删除组
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="groupName">组名</param>
+        </member>
+        <member name="T:DotNetARX.HatchGradientName">
+            <summary>
+            渐变色填充的图案名称
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Linear">
+            <summary>
+            线状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Cylinder">
+            <summary>
+            圆柱状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Invcylinder">
+            <summary>
+            反圆柱状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Spherical">
+            <summary>
+            球状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Invspherical">
+            <summary>
+            反球状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Hemisperical">
+            <summary>
+            半球状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.InvHemisperical">
+            <summary>
+            反半球状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Curved">
+            <summary>
+            抛物面状渐变
+            </summary>
+        </member>
+        <member name="F:DotNetARX.HatchGradientName.Incurved">
+            <summary>
+            反抛物面状渐变
+            </summary>
+        </member>
+        <member name="T:DotNetARX.HatchPalletteDialog">
+            <summary>
+            填充图案选项板类
+            </summary>
+        </member>
+        <member name="P:DotNetARX.HatchPalletteDialog.ShowCustom">
+            <summary>
+            是否显示自定义标签
+            </summary>
+        </member>
+        <member name="M:DotNetARX.HatchPalletteDialog.GetPattern">
+            <summary>
+            获取用户选择的填充图案名称
+            </summary>
+            <returns>返回填充图案名称</returns>
+        </member>
+        <member name="M:DotNetARX.HatchPalletteDialog.#ctor">
+            <summary>
+            构造函数，在填充图案选项板中显示自定义标签
+            </summary>
+        </member>
+        <member name="M:DotNetARX.HatchPalletteDialog.ShowDialog">
+            <summary>
+            显示填充图案选项板
+            </summary>
+            <returns>如果用户选择了填充图案，则返回true，否则返回false</returns>
+        </member>
+        <member name="T:DotNetARX.HatchTools">
+            <summary>
+            填充操作类
+            </summary>
+        </member>
+        <member name="P:DotNetARX.HatchTools.CurrentPattern">
+            <summary>
+            设置或读取默认填充图案，其名称最多可包含 34 个字符，其中不能有空格。
+            </summary>
+        </member>
+        <member name="M:DotNetARX.HatchTools.CreateHatch(Autodesk.AutoCAD.DatabaseServices.Hatch,Autodesk.AutoCAD.DatabaseServices.HatchPatternType,System.String,System.Boolean)">
+            <summary>
+            创建图案填充
+            </summary>
+            <param name="hatch">填充对象</param>
+            <param name="patternType">填充图案类型</param>
+            <param name="patternName">填充图案名</param>
+            <param name="associative">填充是否与边界关联</param>
+        </member>
+        <member name="M:DotNetARX.HatchTools.CreateGradientHatch(Autodesk.AutoCAD.DatabaseServices.Hatch,DotNetARX.HatchGradientName,Autodesk.AutoCAD.Colors.Color,Autodesk.AutoCAD.Colors.Color,System.Boolean)">
+            <summary>
+            创建渐变色填充
+            </summary>
+            <param name="hatch">填充对象</param>
+            <param name="gradientName">渐变色填充的图案名称</param>
+            <param name="color1">渐变色填充的起始颜色</param>
+            <param name="color2">渐变色填充的结束颜色</param>
+            <param name="associative">填充是否与边界关联</param>
+        </member>
+        <member name="T:DotNetARX.LayerTools">
+            <summary>
+            图层操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.LayerTools.AddLayer(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            创建新图层
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="layerName">图层名</param>
+            <returns>返回新建图层的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.LayerTools.SetLayerColor(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.Int16)">
+            <summary>
+            设置图层的颜色
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="layerName">图层名</param>
+            <param name="colorIndex">颜色索引</param>
+            <returns>如果成功设置图层颜色，则返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.LayerTools.SetCurrentLayer(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            将指定的图层设置为当前层
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="layerName">图层名</param>
+            <returns>如果设置成功，则返回ture</returns>
+        </member>
+        <member name="M:DotNetARX.LayerTools.GetAllLayers(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取当前图形中所有的图层
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回所有的层表记录</returns>
+        </member>
+        <member name="M:DotNetARX.LayerTools.DeleteLayer(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            删除指定名称的图层
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="layerName">图层名</param>
+            <returns>如果删除成功，则返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.LayerTools.GetAllLayerObjectIds(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取所有图层的ObjectId
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回所有图层的ObjectId</returns>
+        </member>
+        <member name="T:DotNetARX.LayoutTools">
+            <summary>
+            布局操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.LayoutTools.GetAllLayouts(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取数据库的所有布局
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回所有布局</returns>
+        </member>
+        <member name="M:DotNetARX.LayoutTools.GetEntsInLayout(Autodesk.AutoCAD.DatabaseServices.Layout,System.Boolean)">
+            <summary>
+            用于获得指定布局上的所有实体
+            </summary>
+            <param name="layout">布局对象</param>
+            <param name="bIncludeFirstViewport">是否将第一个视口包含在内</param>
+            <returns>返回所有实体的Id集合</returns>
+        </member>
+        <member name="M:DotNetARX.LayoutTools.GetLayoutId(Autodesk.AutoCAD.DatabaseServices.Database,System.String,Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection@)">
+            <summary>
+            在指定的图形数据库中寻找特定名称的布局，并且输出该布局中包含的所有实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="name">布局名称</param>
+            <param name="entIds">布局中包含的所有实体的Id集合</param>
+            <returns>返回布局的Id</returns>
+        </member>
+        <member name="M:DotNetARX.LayoutTools.CenterLayoutViewport(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            确保布局中的图纸显示在布局中的中间，而不需要使用缩放命令来显示
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="layoutName">布局的名称</param>
+        </member>
+        <member name="T:DotNetARX.LineTypeTools">
+            <summary>
+            线型操作类
+            </summary>
+        </member>
+        <member name="T:DotNetARX.LineTypeTools.Shape">
+            <summary>
+            用于形定义文件的图案
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LineTypeTools.Shape.Track">
+            <summary>
+            竖线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LineTypeTools.Shape.Zig">
+            <summary>
+            Z字型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LineTypeTools.Shape.Box">
+            <summary>
+            矩形
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LineTypeTools.Shape.Circle">
+            <summary>
+            圆
+            </summary>
+        </member>
+        <member name="F:DotNetARX.LineTypeTools.Shape.Bat">
+            <summary>
+            S型
+            </summary>
+        </member>
+        <member name="M:DotNetARX.LineTypeTools.AddLineType(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            创建一个新的线型
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="typeName">线型名</param>
+            <returns>返回新建线型的Id</returns>
+        </member>
+        <member name="M:DotNetARX.LineTypeTools.LoadLineType(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            从“acadiso.lin”线型文件中装载指定线型
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="typeName">线型名</param>
+            <returns>返回装载的线型的Id</returns>
+        </member>
+        <member name="M:DotNetARX.LineTypeTools.SetCurrentLineType(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            设置当前线型
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="typeName">要设置的线型名</param>
+        </member>
+        <member name="T:DotNetARX.LinqToCAD">
+            <summary>
+            LINQ操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInDatabase``1(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取数据库中类型为T的所有实体(对象打开为读）
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <returns>返回数据库中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInDatabase``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+             获取数据库中类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回数据库中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetSelection``1(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取用户选择的类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <returns>返回类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetSelection``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取用户选择的类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体的打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.SelectCrossingWindow``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            选择窗口中及和窗口四条边界相交的实体，实体类型为T
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="pt1">窗口的一个角点</param>
+            <param name="pt2">窗口的另一个角点</param>
+            <returns>返回类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.SelectCrossingWindow``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            选择窗口中及和窗口四条边界相交的实体，实体类型为T
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="pt1">窗口的一个角</param>
+            <param name="pt2">窗口的另一个角点</param>
+            <param name="mode">实体的打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInModelSpace``1(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取模型空间中类型为T的所有实体(对象打开为读）
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <returns>返回模型空间中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInModelSpace``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取模型空间中类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回模型空间中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInPaperSpace``1(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取图纸空间中类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <returns>返回图纸空间中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInPaperSpace``1(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取图纸空间中类型为T的所有实体
+            </summary>
+            <typeparam name="T">实体的类型</typeparam>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回图纸空间中类型为T的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInDatabase(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取数据库中所有的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回数据库中所有的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInDatabase(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取数据库中所有的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回数据库中所有的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetSelection(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取用户选择的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回用户选择的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetSelection(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取用户选择的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回用户选择的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.SelectCrossingWindow(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            选择窗口中及和窗口四条边界相交的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="pt1">窗口的一个角点</param>
+            <param name="pt2">窗口的另一个角点</param>
+            <returns>返回选择的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.SelectCrossingWindow(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            选择窗口中及和窗口四条边界相交的实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="pt1">窗口的一个角点</param>
+            <param name="pt2">窗口的另一个角点</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回选择的实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInModelSpace(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取模型空间中的所有实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回模型空间中的所有实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInModelSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取模型空间中的所有实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回模型空间中的所有实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInPaperSpace(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取图纸空间中的所有实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回图纸空间中的所有实体</returns>
+        </member>
+        <member name="M:DotNetARX.LinqToCAD.GetEntsInPaperSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.OpenMode,System.Boolean)">
+            <summary>
+            获取图纸空间中的所有实体
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="mode">实体打开方式</param>
+            <param name="openErased">是否打开已删除的实体</param>
+            <returns>返回图纸空间中的所有实体</returns>
+        </member>
+        <member name="T:DotNetARX.TypedValueList">
+            <summary>
+            TypedValue列表类，简化选择集过滤器的构造
+            </summary>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.#ctor(Autodesk.AutoCAD.DatabaseServices.TypedValue[])">
+            <summary>
+            接受可变参数的构造函数
+            </summary>
+            <param name="args">TypedValue对象</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.Add(System.Int32,System.Object)">
+            <summary>
+            添加DXF组码及对应的类型
+            </summary>
+            <param name="typecode">DXF组码</param>
+            <param name="value">类型</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.Add(System.Int32)">
+            <summary>
+            添加DXF组码
+            </summary>
+            <param name="typecode">DXF组码</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.Add(Autodesk.AutoCAD.DatabaseServices.DxfCode,System.Object)">
+            <summary>
+            添加DXF组码及对应的类型
+            </summary>
+            <param name="typecode">DXF组码</param>
+            <param name="value">类型</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.Add(Autodesk.AutoCAD.DatabaseServices.DxfCode)">
+            <summary>
+            添加DXF组码
+            </summary>
+            <param name="typecode">DXF组码</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.Add(System.Type)">
+            <summary>
+            添加图元类型,DXF组码缺省为0
+            </summary>
+            <param name="entityType">图元类型</param>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(DotNetARX.TypedValueList)~Autodesk.AutoCAD.EditorInput.SelectionFilter">
+            <summary>
+            TypedValueList隐式转换为SelectionFilter
+            </summary>
+            <param name="src">要转换的TypedValueList对象</param>
+            <returns>返回对应的SelectionFilter类对象</returns>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(DotNetARX.TypedValueList)~Autodesk.AutoCAD.DatabaseServices.ResultBuffer">
+            <summary>
+            TypedValueList隐式转换为ResultBuffer
+            </summary>
+            <param name="src">要转换的TypedValueList对象</param>
+            <returns>返回对应的ResultBuffer对象</returns>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(DotNetARX.TypedValueList)~Autodesk.AutoCAD.DatabaseServices.TypedValue[]">
+            <summary>
+            TypedValueList隐式转换为TypedValue数组
+            </summary>
+            <param name="src">要转换的TypedValueList对象</param>
+            <returns>返回对应的TypedValue数组</returns>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(Autodesk.AutoCAD.DatabaseServices.TypedValue[])~DotNetARX.TypedValueList">
+            <summary>
+            TypedValue数组隐式转换为TypedValueList
+            </summary>
+            <param name="src">要转换的TypedValue数组</param>
+            <returns>返回对应的TypedValueList</returns>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(Autodesk.AutoCAD.EditorInput.SelectionFilter)~DotNetARX.TypedValueList">
+            <summary>
+            SelectionFilter隐式转换为TypedValueList
+            </summary>
+            <param name="src">要转换的SelectionFilter</param>
+            <returns>返回对应的TypedValueList</returns>
+        </member>
+        <member name="M:DotNetARX.TypedValueList.op_Implicit(Autodesk.AutoCAD.DatabaseServices.ResultBuffer)~DotNetARX.TypedValueList">
+            <summary>
+            ResultBuffer隐式转换为TypedValueList
+            </summary>
+            <param name="src">要转换的ResultBuffer</param>
+            <returns>返回对应的TypedValueList</returns>
+        </member>
+        <member name="T:DotNetARX.Point3dList">
+            <summary>
+            Point3d列表类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.Point3dList.#ctor(Autodesk.AutoCAD.Geometry.Point3d[])">
+            <summary>
+            接受可变参数的构造函数
+            </summary>
+            <param name="args">Point3d类对象</param>
+        </member>
+        <member name="M:DotNetARX.Point3dList.op_Implicit(DotNetARX.Point3dList)~Autodesk.AutoCAD.Geometry.Point3d[]">
+            <summary>
+            Point3dList隐式转换为Point3d数组
+            </summary>
+            <param name="src">要转换的Point3dList对象</param>
+            <returns>返回对应的Point3d数组</returns>
+        </member>
+        <member name="M:DotNetARX.Point3dList.op_Implicit(DotNetARX.Point3dList)~Autodesk.AutoCAD.Geometry.Point3dCollection">
+            <summary>
+            Point3dList隐式转换为Point3dCollection
+            </summary>
+            <param name="src">要转换的Point3dList对象</param>
+            <returns>返回对应的Point3dCollection</returns>
+        </member>
+        <member name="M:DotNetARX.Point3dList.op_Implicit(Autodesk.AutoCAD.Geometry.Point3d[])~DotNetARX.Point3dList">
+            <summary>
+            Point3d数组隐式转换为Point3dList
+            </summary>
+            <param name="src">要转换的Point3d数组</param>
+            <returns>返回对应的Point3dList</returns>
+        </member>
+        <member name="M:DotNetARX.Point3dList.op_Implicit(Autodesk.AutoCAD.Geometry.Point3dCollection)~DotNetARX.Point3dList">
+            <summary>
+            Point3dCollection隐式转换为Point3dList
+            </summary>
+            <param name="src">要转换的Point3dCollection</param>
+            <returns>返回对应的Point3dList</returns>
+        </member>
+        <member name="T:DotNetARX.ObjectIdList">
+            <summary>
+            ObjectId列表
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ObjectIdList.#ctor(Autodesk.AutoCAD.DatabaseServices.ObjectId[])">
+            <summary>
+            接受可变参数的构造函数
+            </summary>
+            <param name="args">ObjectId对象</param>
+        </member>
+        <member name="M:DotNetARX.ObjectIdList.op_Implicit(DotNetARX.ObjectIdList)~Autodesk.AutoCAD.DatabaseServices.ObjectId[]">
+            <summary>
+            ObjectIdList隐式转换为ObjectId数组
+            </summary>
+            <param name="src">要转换的ObjectIdList对象</param>
+            <returns>返回对应的ObjectId数组</returns>
+        </member>
+        <member name="M:DotNetARX.ObjectIdList.op_Implicit(DotNetARX.ObjectIdList)~Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection">
+            <summary>
+            ObjectIdList隐式转换为ObjectIdCollection
+            </summary>
+            <param name="src">要转换的ObjectIdList对象</param>
+            <returns>返回对应的ObjectIdCollection</returns>
+        </member>
+        <member name="M:DotNetARX.ObjectIdList.op_Implicit(Autodesk.AutoCAD.DatabaseServices.ObjectId[])~DotNetARX.ObjectIdList">
+            <summary>
+            ObjectId数组隐式转换为ObjectIdList
+            </summary>
+            <param name="src">要转换的ObjectId数组</param>
+            <returns>返回对应的ObjectIdList</returns>
+        </member>
+        <member name="M:DotNetARX.ObjectIdList.op_Implicit(Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection)~DotNetARX.ObjectIdList">
+            <summary>
+            ObjectIdCollection隐式转换为ObjectIdList
+            </summary>
+            <param name="src">要转换的ObjectIdCollection</param>
+            <returns>返回对应的ObjectIdList</returns>
+        </member>
+        <member name="T:DotNetARX.EntityList">
+            <summary>
+            Entity列表
+            </summary>
+        </member>
+        <member name="M:DotNetARX.EntityList.#ctor(Autodesk.AutoCAD.DatabaseServices.Entity[])">
+            <summary>
+            接受可变参数的构造函数
+            </summary>
+            <param name="args">实体对象</param>
+        </member>
+        <member name="M:DotNetARX.EntityList.op_Implicit(DotNetARX.EntityList)~Autodesk.AutoCAD.DatabaseServices.Entity[]">
+            <summary>
+            EntityList隐式转换为Entity数组
+            </summary>
+            <param name="src">要转换的EntityList</param>
+            <returns>返回对应的Entity数组</returns>
+        </member>
+        <member name="M:DotNetARX.EntityList.op_Implicit(Autodesk.AutoCAD.DatabaseServices.Entity[])~DotNetARX.EntityList">
+            <summary>
+            Entity数组隐式转换为EntityList
+            </summary>
+            <param name="src">要转换的Entity数组</param>
+            <returns>返回对应的EntityList</returns>
+        </member>
+        <member name="T:DotNetARX.MessageFilter">
+            <summary>
+            Windows消息过滤类
+            </summary>
+        </member>
+        <member name="F:DotNetARX.MessageFilter.WM_KEYDOWN">
+            <summary>
+            按键消息
+            </summary>
+        </member>
+        <member name="P:DotNetARX.MessageFilter.KeyName">
+            <summary>
+            按下的键名
+            </summary>
+        </member>
+        <member name="M:DotNetARX.MessageFilter.PreFilterMessage(System.Windows.Forms.Message@)">
+            <summary>
+            在调度消息之前将其筛选出来
+            </summary>
+            <param name="m">消息名</param>
+            <returns>如果调试的是按键消息，则返回true,否则返回false</returns>
+        </member>
+        <member name="T:DotNetARX.MLineTools">
+            <summary>
+            多线样式操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.MLineTools.CreateMLineStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.MlineStyleElement})">
+            <summary>
+            创建一个新的多线样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">多线样式名</param>
+            <param name="elements">加入到多线样式的元素集合</param>
+            <returns>返回加入的多线样式的Id</returns>
+        </member>
+        <member name="M:DotNetARX.MLineTools.RemoveMLineStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            删除多线样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">多线样式名</param>
+        </member>
+        <member name="T:DotNetARX.PInvoke">
+            <summary>
+            P/Invoke操作类
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PInvoke.Is32Bit">
+            <summary>
+            判断系统是32位还是64位
+            </summary>
+        </member>
+        <member name="M:DotNetARX.PInvoke.GetDelegateForFunction(System.Boolean,System.String,System.String,System.Type)">
+            <summary>
+            将非托管函数指针转换为委托。
+            </summary>
+            <param name="acdb">true表示非托管函数为acdb**.dll中定义的，false表示函数为acad.exe中定义的</param>
+            <param name="funcName32">32位函数的重整名称</param>
+            <param name="funcName64">64位函数的重整名称</param>
+            <param name="t">要返回的委托的类型</param>
+            <returns>委托实例，可强制转换为适当的委托类型。</returns>
+        </member>
+        <member name="M:DotNetARX.PInvoke.GetEnvVariable(Autodesk.AutoCAD.EditorInput.Editor,System.String)">
+            <summary>
+            获取环境变量值
+            </summary>
+            <param name="ed">命令行对象，无意义，只是为了创建扩展函数</param>
+            <param name="symbol">环境变量名</param>
+            <returns>返回环境变量值</returns>
+        </member>
+        <member name="M:DotNetARX.PInvoke.SetEnvVariable(Autodesk.AutoCAD.EditorInput.Editor,System.String,System.String)">
+            <summary>
+            设置环境变量值
+            </summary>
+            <param name="ed">命令行对象，无意义，只是为了创建扩展函数</param>
+            <param name="symbol">环境变量名</param>
+            <param name="value">要设置的值</param>
+            <returns>如果设置成功，则返回true,否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.PInvoke.GetPreviewBitmapFromDwg(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            获取dwg文件的预览图案
+            </summary>
+            <param name="db">数据库对象，无意义，只是为了创建扩展函数</param>
+            <param name="fileName">dwg文件名</param>
+            <returns>返回dwg文件的预览图案</returns>
+        </member>
+        <member name="M:DotNetARX.PInvoke.AddPersistentReactor(Autodesk.AutoCAD.DatabaseServices.DBObject,Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            为对象添加永久反应器
+            </summary>
+            <param name="dbObject">对象</param>
+            <param name="objId">永久反应器的Id</param>
+        </member>
+        <member name="M:DotNetARX.PInvoke.GenerateThumbnailBitmap(Autodesk.AutoCAD.EditorInput.Editor)">
+            <summary>
+            为当前图形生成缩略图
+            </summary>
+            <param name="ed">命令行对象，无意义，只是为了创建扩展函数</param>
+        </member>
+        <member name="M:DotNetARX.PInvoke.AnnotativeDwg(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            当图形数据库插入到另外一个图形时，是否将其看作为可缩放块
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>若为true,则表示将数据库看为可缩放块</returns>
+        </member>
+        <member name="T:DotNetARX.PlotSettingsEx">
+            <summary>
+            增强型打印设置类，支持数据绑定
+            </summary>
+        </member>
+        <member name="E:DotNetARX.PlotSettingsEx.PropertyChanged">
+            <summary>
+            在更改属性值时发生的事件
+            </summary>
+        </member>
+        <member name="M:DotNetARX.PlotSettingsEx.NotifyPropertyChanged(System.String)">
+            <summary>
+            处理属性更改事件的函数
+            </summary>
+            <param name="info">属性名</param>
+        </member>
+        <member name="M:DotNetARX.PlotSettingsEx.#ctor(Autodesk.AutoCAD.DatabaseServices.PlotSettings)">
+            <summary>
+            复制构造函数，从已有打印设置中获取打印设置
+            </summary>
+            <param name="ps">已有打印设置</param>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.CanonicalMediaName">
+            <summary>
+            获取或设置当前图纸尺寸（中文表示）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.CurrentStyleSheet">
+            <summary>
+            获取或设置当前打印样式表
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.CustomPrintScale">
+            <summary>
+            获取或设置自定义打印比例
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotCentered">
+            <summary>
+            获取或设置是否居中打印
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotConfigurationName">
+            <summary>
+            获取或设置当前打印设备名称
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotOrigin">
+            <summary>
+            获取或设置当前打印原点（原点是从图纸边界的介质边缘偏移而来的）。
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotPaperUnits">
+            <summary>
+            获取或设置打印比例
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotRotation">
+            <summary>
+            获取或设置图形方向
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotType">
+            <summary>
+            获取或设置打印范围
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotViewName">
+            <summary>
+            获取或设置打印视口名
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotWindowArea">
+            <summary>
+            获取或设置打印窗口的范围
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.StdScale">
+            <summary>
+            获取或设置当前标准比例（实数形式）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.StdScaleType">
+            <summary>
+            获取或设置当前标准比例（枚举形式）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.UseStandardScale">
+            <summary>
+            获取或设置是否选用标准比例
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.Denominator">
+            <summary>
+            获取或设置当前图形单位
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.Numerator">
+            <summary>
+            获取或设置当前图纸单位
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotOriginX">
+            <summary>
+            获取或设置当前X方向的打印偏移
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotOriginY">
+            <summary>
+            获取或设置当前Y方向的打印偏移
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotExtent">
+            <summary>
+            获取或设置打印时是否布满图纸
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotReverse">
+            <summary>
+            获取或设置是否反向打印
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.DeviceList">
+            <summary>
+            获取当前打印设备列表
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.MediaList">
+            <summary>
+            获取当前图纸尺寸列表（中文表示）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotTypeList">
+            <summary>
+            获取当前打印范围列表（中文表示）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotUnitList">
+            <summary>
+            获取当前打印单位列表（中文表示）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.ColorDependentPlotStyles">
+            <summary>
+            获取颜色相关打印样式列表
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.NamedPlotStyles">
+            <summary>
+            获取命名打印样式列表
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.StdScaleTypeList">
+            <summary>
+            获取标准打印比例列表
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotTypeLocal">
+            <summary>
+            获取或设置打印范围（中文）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotPaperUnitsLocal">
+            <summary>
+            获取或设置打印单位（中文）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.StdScaleTypeLocal">
+            <summary>
+            获取或设置当前标准打印比例（中文）
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.IsPlotToFile">
+            <summary>
+            是否打印到文件
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.NoPlotToFile">
+            <summary>
+            可以不打印到文件
+            </summary>
+        </member>
+        <member name="P:DotNetARX.PlotSettingsEx.PlotHorizontal">
+            <summary>
+            获取或设置是否横向打印
+            </summary>
+        </member>
+        <member name="M:DotNetARX.PlotSettingsEx.UpdatePlotSettings(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            更新其它的打印设置
+            </summary>
+            <param name="psId">打印设置对象</param>
+        </member>
+        <member name="T:DotNetARX.PlotTools">
+            <summary>
+            打印操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.PlotTools.Plot(Autodesk.AutoCAD.PlottingServices.PlotEngine,Autodesk.AutoCAD.DatabaseServices.Layout,Autodesk.AutoCAD.DatabaseServices.PlotSettings,System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            执行单一布局打印
+            </summary>
+            <param name="engine">打印引擎对象</param>
+            <param name="layout">要打印的布局</param>
+            <param name="ps">打印设置</param>
+            <param name="fileName">打印文件名</param>
+            <param name="copies">打印份数</param>
+            <param name="isPreview">是否预览打印</param>
+            <param name="showProgressDialog">是否显示打印进度框</param>
+            <param name="plotToFile">是否打印到文件</param>
+            <returns>返回打印状态</returns>
+        </member>
+        <member name="M:DotNetARX.PlotTools.MPlot(Autodesk.AutoCAD.PlottingServices.PlotEngine,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.Layout},Autodesk.AutoCAD.DatabaseServices.PlotSettings,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            执行多布局打印
+            </summary>
+            <param name="engine">打印引擎对象</param>
+            <param name="layouts">要打印的布局列表</param>
+            <param name="ps">打印设置</param>
+            <param name="fileName">打印文件名</param>
+            <param name="previewNum">预览的布局号，小于1表示打印</param>
+            <param name="copies">打印份数</param>
+            <param name="showProgressDialog">是否显示打印进度框</param>
+            <param name="plotToFile">是否打印到文件</param>
+            <returns>返回打印状态</returns>
+        </member>
+        <member name="M:DotNetARX.PlotTools.StartSheetProgress(Autodesk.AutoCAD.PlottingServices.PlotProgressDialog)">
+            <summary>
+            启动打印图纸进程
+            </summary>
+            <param name="plotDlg">打印进度框对象</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.EndSheetProgress(Autodesk.AutoCAD.PlottingServices.PlotProgressDialog)">
+            <summary>
+            终止打印图纸进程
+            </summary>
+            <param name="plotDlg">打印进度框对象</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.StartPlotProgress(Autodesk.AutoCAD.PlottingServices.PlotProgressDialog,System.Boolean)">
+            <summary>
+            启动打印进度框
+            </summary>
+            <param name="plotDlg">打印进度框对象</param>
+            <param name="isPreview">是否为预览打印</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.EndPlotProgress(Autodesk.AutoCAD.PlottingServices.PlotProgressDialog)">
+            <summary>
+            终止打印进度框
+            </summary>
+            <param name="plotDlg">打印进度框对象</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.DeviceMeidaToXML(System.String)">
+            <summary>
+            将打印设备及标准图纸尺寸清单存储到XML文件
+            </summary>
+            <param name="fileName">XML文件名</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.MeidasFromXML(System.String,System.String)">
+            <summary>
+            从XML文件中读取打印设备及标准图纸尺寸清单
+            </summary>
+            <param name="fileName">XML文件名</param>
+            <param name="deviceName">打印设备名</param>
+            <returns>返回打印设备及其对应的标准图纸尺寸清单</returns>
+        </member>
+        <member name="M:DotNetARX.PlotTools.DevicesFromXML(System.String)">
+            <summary>
+            从XML文件读取打印设备名列表
+            </summary>
+            <param name="fileName">XML文件名</param>
+            <returns>返回打印设备名列表</returns>
+        </member>
+        <member name="M:DotNetARX.PlotTools.CopyPlotSettings(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            从其它图形数据库中复制打印设置
+            </summary>
+            <param name="destdb">目的图形数据库</param>
+            <param name="sourceDb">源图形数据库</param>
+            <param name="plotSettingName">打印设置名称</param>
+        </member>
+        <member name="M:DotNetARX.PlotTools.CopyPlotSettings(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            复制另一个图形数据库中的所有打印设置
+            </summary>
+            <param name="destdb">目的图形数据库</param>
+            <param name="sourceDb">源图形数据库</param>
+        </member>
+        <member name="T:DotNetARX.PolylineTools">
+            <summary>
+            多段线操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolyline(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point3dCollection)">
+            <summary>
+            通过三维点集合创建多段线
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="pts">多段线的顶点</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolyline(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2dCollection)">
+            <summary>
+            通过二维点集合创建多段线
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="pts">多段线的顶点</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolyline(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2d[])">
+            <summary>
+            通过不固定的点创建多段线
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="pts">多段线的顶点</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreateRectangle(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2d,Autodesk.AutoCAD.Geometry.Point2d)">
+            <summary>
+            创建矩形
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="pt1">矩形的角点1</param>
+            <param name="pt2">矩形的角点2</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolygon(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2d,System.Int32,System.Double)">
+            <summary>
+            创建多边形
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="centerPoint">多边形中心点</param>
+            <param name="number">边数</param>
+            <param name="radius">外接圆半径</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolyCircle(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2d,System.Double)">
+            <summary>
+            创建多段线形式的圆
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="centerPoint">圆心</param>
+            <param name="radius">半径</param>
+        </member>
+        <member name="M:DotNetARX.PolylineTools.CreatePolyArc(Autodesk.AutoCAD.DatabaseServices.Polyline,Autodesk.AutoCAD.Geometry.Point2d,System.Double,System.Double,System.Double)">
+            <summary>
+            创建多段线形式的圆弧
+            </summary>
+            <param name="pline">多段线对象</param>
+            <param name="centerPoint">圆弧的圆心</param>
+            <param name="radius">圆弧的半径</param>
+            <param name="startAngle">起始角度</param>
+            <param name="endAngle">终止角度</param>
+        </member>
+        <member name="T:DotNetARX.ProgressManager">
+            <summary>
+            进度条管理类，可以解决常规进度条显示闪烁的问题
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ProgressManager.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message">进度条的显示信息</param>
+        </member>
+        <member name="M:DotNetARX.ProgressManager.Dispose">
+            <summary>
+            程序结束时调用的函数，用以释放资源
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ProgressManager.SetTotalOperations(System.Int64)">
+            <summary>
+            设置进度条需要更新，一般为循环次数
+            </summary>
+            <param name="totalOps">循环次数</param>
+        </member>
+        <member name="M:DotNetARX.ProgressManager.Tick">
+            <summary>
+            当进度增量达到需要更新的量时，则更新进度条
+            </summary>
+        </member>
+        <member name="T:DotNetARX.RegionTools">
+            <summary>
+            面域操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetCentroid(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的质心
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回质心的坐标</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetMomInertia(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的惯性矩
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回惯性矩</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetProdInertia(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的惯性积
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回惯性积</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetPrinMoments(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的主力矩
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回主力矩</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetPrinAxes(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的主方向
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回主方向</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetRadiiGyration(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域的旋转半径
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回旋转半径</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetExtentsLow(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域边界框的下限
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回边界框的下限</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.GetExtentsHigh(Autodesk.AutoCAD.DatabaseServices.Region)">
+            <summary>
+            获取面域边界框的上限
+            </summary>
+            <param name="region">面域对象</param>
+            <returns>返回边界框的上限</returns>
+        </member>
+        <member name="M:DotNetARX.RegionTools.CreateRegion(Autodesk.AutoCAD.DatabaseServices.Curve[])">
+            <summary>
+            根据曲线创建面域
+            </summary>
+            <param name="curves">曲线</param>
+            <returns>返回创建的面域列表</returns>
+        </member>
+        <member name="T:DotNetARX.Register">
+            <summary>
+            AutoCAD注册表操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.Register.GetACDBDLL_NAME">
+            <summary>
+            获取当前AutoCAD的主版本号
+            </summary>
+            <returns>返回当前AutoCAD的主版本号</returns>
+        </member>
+        <member name="M:DotNetARX.Register.GetAutoCADKey">
+            <summary>
+            获取AutoCAD的注册表键值
+            </summary>
+            <returns>返回AutoCAD的注册表键值</returns>
+        </member>
+        <member name="M:DotNetARX.Register.GetAutoCADVersion">
+            <summary>
+            获取AutoCAD的版本号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetARX.Register.GetAutoCADKeyName">
+            <summary>
+            获取AutoCAD所属的注册表键名
+            </summary>
+            <returns>返回AutoCAD所属的注册表键名</returns>
+        </member>
+        <member name="M:DotNetARX.Register.CreateDemandLoadingEntries(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            创建自动加载.NET程序所需要的注册表项
+            </summary>
+            <param name="appName">.NET程序名</param>
+            <param name="appDesc">描述程序用途的字符串</param>
+            <param name="appPath">.NET程序的路径</param>
+            <param name="currentUser">注册表项是创建在HKEY_CURRENT_USER键下还是HKEY_LOCAL_MACHINE健下</param>
+            <param name="overwrite">是否覆盖同名的程序</param>
+            <param name="flagLOADCTRLS">LOADCTRLS键的值，用来描述装载程序的原因</param>
+            <returns>如果创建注册表项成功则返回true,否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.Register.RemoveDemandLoadingEntries(System.String,System.Boolean)">
+            <summary>
+            删除自动加载.NET程序所需要的注册表项
+            </summary>
+            <param name="appName">.NET程序名</param>
+            <param name="currentUser">注册表项是创建在HKEY_CURRENT_USER键下还是HKEY_LOCAL_MACHINE健下</param>
+            <returns>如果删除注册表项成功则返回true，否则返回false</returns>
+        </member>
+        <member name="T:DotNetARX.SelectionTools">
+            <summary>
+            选择操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.SelectionTools.SelectAtPoint(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.EditorInput.SelectionFilter)">
+            <summary>
+            选择过一点的所有实体
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="point">点</param>
+            <param name="filter">选择过滤器</param>
+            <returns>返回过指定点的所有实体</returns>
+        </member>
+        <member name="M:DotNetARX.SelectionTools.SelectAtPoint(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            选择过一点的所有实体
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="point">点</param>
+            <returns>返回过指定点的所有实体</returns>
+        </member>
+        <member name="T:DotNetARX.SummaryInfoTools">
+            <summary>
+            摘要信息操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.NumCustomProperties(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取摘要信息中的自定义属性个数
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回自定义属性个数</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.HasCustomProperty(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            判断图形中是否存在指定的自定义属性
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="key">自定义属性的名称</param>
+            <returns>如果存在指定的自定义属性，返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.HasSummaryInfo(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            判断图形中是否存在摘要信息
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>如果存在摘要信息，返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.CreationTime(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取图形创建的时间
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回图形创建的时间</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.ModifyTime(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取图形的上次修改时间
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回图形的上次修改时间</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.TotalEditTime(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取编辑图形的总时间
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回编辑图形的总时间</returns>
+        </member>
+        <member name="M:DotNetARX.SummaryInfoTools.ConvertAcadJulianToDateTime(System.Double)">
+            <summary>
+            将儒略日时间格式转换为DateTime格式
+            </summary>
+            <param name="julianDate">儒略日时间</param>
+            <returns>返回DateTime格式的时间</returns>
+        </member>
+        <member name="T:DotNetARX.TableTools">
+            <summary>
+            表格操作类
+            </summary>
+        </member>
+        <member name="P:DotNetARX.TableTools.AllRows">
+            <summary>
+            所有行的标志位（包括标题行、数据行）
+            </summary>
+        </member>
+        <member name="M:DotNetARX.TableTools.CreateTable(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.Geometry.Point3d,System.Int32,System.Int32)">
+            <summary>
+            创建表格
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="position">表格位置</param>
+            <param name="numRows">表格行数</param>
+            <param name="numCols">表格列数</param>
+            <returns>返回创建的表格的Id</returns>
+        </member>
+        <member name="M:DotNetARX.TableTools.SetTextHeight(Autodesk.AutoCAD.DatabaseServices.Table,System.Double,Autodesk.AutoCAD.DatabaseServices.RowType)">
+            <summary>
+            设置单元格中文本的高度
+            </summary>
+            <param name="table">表格对象</param>
+            <param name="height">文本高度</param>
+            <param name="rowType">行的标志位</param>
+        </member>
+        <member name="M:DotNetARX.TableTools.SetTextHeight(Autodesk.AutoCAD.DatabaseServices.Table,System.Double)">
+            <summary>
+            设置表格中所有单元格中文本为同一高度
+            </summary>
+            <param name="table">表格对象</param>
+            <param name="height">文本高度</param>
+        </member>
+        <member name="M:DotNetARX.TableTools.SetAlignment(Autodesk.AutoCAD.DatabaseServices.Table,Autodesk.AutoCAD.DatabaseServices.CellAlignment,Autodesk.AutoCAD.DatabaseServices.RowType)">
+            <summary>
+            设置单元格中文本的对齐方式
+            </summary>
+            <param name="table">表格对象</param>
+            <param name="align">单元格对齐方式</param>
+            <param name="rowType">行的标志位</param>
+        </member>
+        <member name="M:DotNetARX.TableTools.SetAlignment(Autodesk.AutoCAD.DatabaseServices.Table,Autodesk.AutoCAD.DatabaseServices.CellAlignment)">
+            <summary>
+            设置表格中所有单元格中文本为同一对齐方式
+            </summary>
+            <param name="table">表格对象</param>
+            <param name="align">单元格对齐方式</param>
+        </member>
+        <member name="M:DotNetARX.TableTools.SetRowTextString(Autodesk.AutoCAD.DatabaseServices.Table,System.Int32,System.String[])">
+            <summary>
+            一次性按行设置单元格文本
+            </summary>
+            <param name="table">表格对象</param>
+            <param name="rowIndex">行号</param>
+            <param name="data">文本内容</param>
+            <returns>如果设置成功，则返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.TableTools.AddTableStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            为图形添加一个新的表格样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">表格样式的名称</param>
+            <returns>返回表格样式的Id</returns>
+        </member>
+        <member name="T:DotNetARX.FontCharSet">
+            <summary>
+            字体字符集名称
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontCharSet.Ansi">
+            <summary>
+            英文
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontCharSet.Default">
+            <summary>
+            与当前操作系统语言有关，如为简体中文，则被设置为GB2312
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontCharSet.GB2312">
+            <summary>
+            简体中文
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontCharSet.Big5">
+            <summary>
+            繁体中文
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontCharSet.OEM">
+            <summary>
+            与操作系统有关
+            </summary>
+        </member>
+        <member name="T:DotNetARX.FontPitch">
+            <summary>
+            字体的字宽/字体间距
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontPitch.Default">
+            <summary>
+            默认字宽
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontPitch.Fixed">
+            <summary>
+            固定字宽
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontPitch.Variable">
+            <summary>
+            可变字宽
+            </summary>
+        </member>
+        <member name="T:DotNetARX.FontFamily">
+            <summary>
+            字体的语系定义
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Dontcare">
+            <summary>
+            使用默认字体
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Roman">
+            <summary>
+            可变的笔划宽度，有衬线，如MS Serif字体
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Swiss">
+            <summary>
+            可变的笔划宽度，无衬线，如MS Sans Serif字体 
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Modern">
+            <summary>
+            固定笔划宽度，衬线可以有也可以没有,如Courier New字体
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Script">
+            <summary>
+            手写体，如Cursive字体
+            </summary>
+        </member>
+        <member name="F:DotNetARX.FontFamily.Decorative">
+            <summary>
+            小说字体，如旧式英语
+            </summary>
+        </member>
+        <member name="T:DotNetARX.TextStyleTools">
+            <summary>
+            文字样式操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.AddTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.String,System.String)">
+            <summary>
+            创建一个新的文字样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">文字样式名</param>
+            <param name="fontFilename">字体文件名</param>
+            <param name="bigFontFilename">大字体文件名</param>
+            <returns>返回添加的文字样式的Id</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.AddTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.String)">
+            <summary>
+            创建一个新的文字样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">文字样式名</param>
+            <param name="fontFilename">字体文件名</param>
+            <returns>返回添加的文字样式的Id</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.AddTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.String,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            创建一个新的文字样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">文字样式名</param>
+            <param name="fontName">字体文件名</param>
+            <param name="bold">是否加粗</param>
+            <param name="italic">是否倾斜</param>
+            <param name="charset">字体的字符集</param>
+            <param name="pitchAndFamily">字体的字宽和语系定义</param>
+            <returns>返回添加的文字样式的Id</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.AddShapeTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.String)">
+            <summary>
+            添加包含图案的形定义文件
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">样式名</param>
+            <param name="shapeFilename">形定义文件名</param>
+            <returns>返回新添加的文字样式表记录的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.SetCurrentTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            设置当前文字样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">文字样式名</param>
+            <returns>如果设置成功返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.DeleteTextStyle(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            删除文字样式
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="styleName">文字样式名</param>
+            <returns>如果删除成功返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.TextStyleTools.SetTextStyleProp(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Double,System.Double,System.Double,System.Boolean,System.Boolean,System.Boolean,Autodesk.AutoCAD.DatabaseServices.AnnotativeStates,System.Boolean)">
+            <summary>
+            设置文字样式的有关属性
+            </summary>
+            <param name="styleId">文字样式的Id</param>
+            <param name="textSize">高度</param>
+            <param name="xscale">宽度因子</param>
+            <param name="obliquingAngle">倾斜角度</param>
+            <param name="isVertical">是否垂直</param>
+            <param name="upsideDown">是否上下颠倒</param>
+            <param name="backwards">是否反向</param>
+            <param name="annotative">是否具有注释性</param>
+            <param name="paperOrientation">文字方向与布局是否匹配</param>
+        </member>
+        <member name="T:DotNetARX.StackType">
+            <summary>
+            多行文字堆叠方式
+            </summary>
+        </member>
+        <member name="F:DotNetARX.StackType.HorizontalFraction">
+            <summary>
+            水平分数(/)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.StackType.ItalicFraction">
+            <summary>
+            斜分数(#)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.StackType.Tolerance">
+            <summary>
+            公差(^)
+            </summary>
+        </member>
+        <member name="T:DotNetARX.TextSpecialSymbol">
+            <summary>
+            特殊字符
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Degree">
+            <summary>
+            度符号(°)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Tolerance">
+            <summary>
+            公差符号(±)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Diameter">
+            <summary>
+            直径符号(φ)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.AlmostEqual">
+            <summary>
+            几乎相等(≈)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Angle">
+            <summary>
+            角度(∠)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.LineBoundary">
+            <summary>
+            边界线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.LineCenter">
+            <summary>
+            中心线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Delta">
+            <summary>
+            增量(Δ)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.ElectricalPhase">
+            <summary>
+            电相位(φ)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.LineFlow">
+            <summary>
+            流线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Identity">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.InitialLength">
+            <summary>
+            初始长度
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.LineMonument">
+            <summary>
+            界碑线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Notequal">
+            <summary>
+            不相等(≠)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Ohm">
+            <summary>
+            欧姆
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Omega">
+            <summary>
+            欧米加(Ω)
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.LinePlate">
+            <summary>
+            地界线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Subscript2">
+            <summary>
+            下标2
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Square">
+            <summary>
+            平方
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Cube">
+            <summary>
+            立方
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Overline">
+            <summary>
+            单行文字上划线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Underline">
+            <summary>
+            单行文字下划线
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Alpha">
+            <summary>
+            α
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Belta">
+            <summary>
+            β
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.Gamma">
+            <summary>
+            γ 
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.SteelBar1">
+            <summary>
+            一级钢筋符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.SteelBar2">
+            <summary>
+            二级钢筋符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.SteelBar3">
+            <summary>
+            三级钢筋符号
+            </summary>
+        </member>
+        <member name="F:DotNetARX.TextSpecialSymbol.SteelBar4">
+            <summary>
+            四级钢筋符号
+            </summary>
+        </member>
+        <member name="T:DotNetARX.TextTools">
+            <summary>
+            文字操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.TextTools.GetText(Autodesk.AutoCAD.DatabaseServices.MText)">
+            <summary>
+            获取多行文字的真实内容
+            </summary>
+            <param name="mtext">多行文字对象</param>
+            <returns>返回多行文字的真实内容</returns>
+        </member>
+        <member name="M:DotNetARX.TextTools.StackText(System.String,System.String,System.String,DotNetARX.StackType,System.Double)">
+            <summary>
+            堆叠多行文字
+            </summary>
+            <param name="text">堆叠分数前的文字</param>
+            <param name="supText">堆叠分数的分子</param>
+            <param name="subText">堆叠分数的分母</param>
+            <param name="stackType">堆叠类型</param>
+            <param name="scale">堆叠文字的缩放比例</param>
+            <returns>返回堆叠好的文字</returns>
+        </member>
+        <member name="M:DotNetARX.TextTools.SetFromTextStyle(Autodesk.AutoCAD.DatabaseServices.DBText)">
+            <summary>
+            设置单行文本的属性为当前文字样式的属性
+            </summary>
+            <param name="txt">单行文本对象</param>
+        </member>
+        <member name="M:DotNetARX.TextTools.SetFromTextStyle(Autodesk.AutoCAD.DatabaseServices.MText)">
+            <summary>
+            设置多行文本的属性为当前文字样式的属性
+            </summary>
+            <param name="mtxt">多行文本对象</param>
+        </member>
+        <member name="T:DotNetARX.Tools">
+            <summary>
+            辅助操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.Tools.IsNumeric(System.String)">
+            <summary>
+            判断字符串是否为数字
+            </summary>
+            <param name="value">字符串</param>
+            <returns>如果字符串为数字，返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.IsInt(System.String)">
+            <summary>
+            判断字符串是否为整数
+            </summary>
+            <param name="value">字符串</param>
+            <returns>如果字符串为整数，返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.GetCurrentPath">
+            <summary>
+            获取当前.NET程序所在的目录
+            </summary>
+            <returns>返回当前.NET程序所在的目录</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            判断字符串是否为空或空白
+            </summary>
+            <param name="value">字符串</param>
+            <returns>如果字符串为空或空白，返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.GetModelSpaceId(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取模型空间的ObjectId
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回模型空间的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.GetPaperSpaceId(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取图纸空间的ObjectId
+            </summary>
+            <param name="db"></param>
+            <returns>返回图纸空间的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToModelSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity)">
+            <summary>
+            将实体添加到模型空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ent">要添加的实体</param>
+            <returns>返回添加到模型空间中的实体ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToModelSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity[])">
+            <summary>
+            将实体添加到模型空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ents">要添加的多个实体</param>
+            <returns>返回添加到模型空间中的实体ObjectId集合</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToPaperSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity)">
+            <summary>
+            将实体添加到图纸空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ent">要添加的实体</param>
+            <returns>返回添加到图纸空间中的实体ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToPaperSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity[])">
+            <summary>
+            将实体添加到图纸空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ents">要添加的多个实体</param>
+            <returns>返回添加到图纸空间中的实体ObjectId集合</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToCurrentSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity)">
+            <summary>
+            将实体添加到当前空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ent">要添加的实体</param>
+            <returns>返回添加到当前空间中的实体ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.AddToCurrentSpace(Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Entity[])">
+            <summary>
+            将实体添加到当前空间
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="ents">要添加的多个实体</param>
+            <returns>返回添加到当前空间中的实体ObjectId集合</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.HandleToObjectId(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            将字符串形式的句柄转化为ObjectId
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="handleString">句柄字符串</param>
+            <returns>返回实体的ObjectId</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.HighlightEntities(Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection)">
+            <summary>
+            亮显实体
+            </summary>
+            <param name="ids">要亮显的实体的Id集合</param>
+        </member>
+        <member name="M:DotNetARX.Tools.HighlightEntities2(Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection)">
+            <summary>
+            亮显实体
+            </summary>
+            <param name="ids">要亮显的实体的Id集合</param>
+        </member>
+        <member name="M:DotNetARX.Tools.HighlightEntities(Autodesk.AutoCAD.EditorInput.SelectionSet)">
+            <summary>
+            亮显选择集中的实体
+            </summary>
+            <param name="selectionSet">选择集</param>
+        </member>
+        <member name="M:DotNetARX.Tools.UnHighlightEntities(Autodesk.AutoCAD.DatabaseServices.ObjectIdCollection)">
+            <summary>
+            取消亮显实体
+            </summary>
+            <param name="ids">实体的Id集合</param>
+        </member>
+        <member name="M:DotNetARX.Tools.StringToPoint3d(System.String)">
+            <summary>
+            将字符串格式的点转换为Point3d格式
+            </summary>
+            <param name="stringPoint">字符串格式的点</param>
+            <returns>返回对应的Point3d</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.GetDocument(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取数据库对应的文档对象
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回数据库对应的文档对象</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.GetEditor(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            根据数据库获取命令行对象
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回命令行对象</returns>
+        </member>
+        <member name="M:DotNetARX.Tools.WriteMessage(Autodesk.AutoCAD.EditorInput.Editor,System.Object)">
+            <summary>
+            在命令行输出信息
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="message">要输出的信息</param>
+        </member>
+        <member name="M:DotNetARX.Tools.WriteMessageWithReturn(Autodesk.AutoCAD.EditorInput.Editor,System.Object)">
+            <summary>
+            在命令行输出信息，信息显示在新行上
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="message">要输出的信息</param>
+        </member>
+        <member name="T:DotNetARX.UCSTools">
+            <summary>
+            UCS操作类
+            </summary>
+        </member>
+        <member name="T:DotNetARX.UCSTools.CoordSystem">
+            <summary>
+            坐标系的类型
+            </summary>
+        </member>
+        <member name="F:DotNetARX.UCSTools.CoordSystem.WCS">
+            <summary>
+            WCS
+            </summary>
+        </member>
+        <member name="F:DotNetARX.UCSTools.CoordSystem.UCS">
+            <summary>
+            UCS
+            </summary>
+        </member>
+        <member name="F:DotNetARX.UCSTools.CoordSystem.DCS">
+            <summary>
+            DCS
+            </summary>
+        </member>
+        <member name="F:DotNetARX.UCSTools.CoordSystem.PSDCS">
+            <summary>
+            PSDCS
+            </summary>
+        </member>
+        <member name="M:DotNetARX.UCSTools.TranslateCoordinates(Autodesk.AutoCAD.Geometry.Point3d,DotNetARX.UCSTools.CoordSystem,DotNetARX.UCSTools.CoordSystem,System.Int32)">
+            <summary>
+            将点或矢量从一个坐标系转换到另一个坐标系
+            </summary>
+            <param name="pt">坐标，表示点或位移矢量</param>
+            <param name="from">源坐标系</param>
+            <param name="to">目标坐标系</param>
+            <param name="disp">位移矢量标记，1表示位移矢量，0表示点</param>
+            <returns>返回转化后的坐标</returns>
+        </member>
+        <member name="M:DotNetARX.UCSTools.TranslateCoordinates(Autodesk.AutoCAD.Geometry.Point3d,DotNetARX.UCSTools.CoordSystem,DotNetARX.UCSTools.CoordSystem)">
+            <summary>
+            将点从一个坐标系转换到另一个坐标系
+            </summary>
+            <param name="pt">点</param>
+            <param name="from">源坐标系</param>
+            <param name="to">目标坐标系</param>
+            <returns>返回转化后的坐标</returns>
+        </member>
+        <member name="M:DotNetARX.UCSTools.AddUCS(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            创建一个新的UCS
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="UCSName">要创建的UCS名称</param>
+            <returns>返回创建的UCS的Id</returns>
+        </member>
+        <member name="M:DotNetARX.UCSTools.SetCurrentUCS(Autodesk.AutoCAD.DatabaseServices.Database,System.String)">
+            <summary>
+            将UCS表中已经存在的一个UCS设置为当前UCS
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="UCSName">UCS名称</param>
+            <returns>如果设置成功返回true，否则返回false</returns>
+        </member>
+        <member name="M:DotNetARX.UCSTools.GetCurrentUCS(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取当前UCS
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回当前UCS的Id</returns>
+        </member>
+        <member name="M:DotNetARX.UCSTools.SetUCSOrigin(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            设置UCS的原点
+            </summary>
+            <param name="ucsId">UCS的Id</param>
+            <param name="pt">要设置的UCS原点坐标</param>
+        </member>
+        <member name="M:DotNetARX.UCSTools.RotateUCS(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Double,Autodesk.AutoCAD.Geometry.Vector3d)">
+            <summary>
+            旋转UCS
+            </summary>
+            <param name="ucsId">UCS的Id</param>
+            <param name="rotateAngle">旋转角度</param>
+            <param name="rotateAxis">旋转轴</param>
+        </member>
+        <member name="T:DotNetARX.ViewportTools">
+            <summary>
+            视口操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ViewportTools.SetCurrentVPort(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.DatabaseServices.Viewport)">
+            <summary>
+            将视口置为当前
+            </summary>
+            <param name="editor">命令行对象</param>
+            <param name="vport">视口对象</param>
+        </member>
+        <member name="M:DotNetARX.ViewportTools.SetCurrentVPort(Autodesk.AutoCAD.EditorInput.Editor,System.Int32)">
+            <summary>
+            将视口置为当前
+            </summary>
+            <param name="editor">命令行对象</param>
+            <param name="vportNumber">视口编号</param>
+        </member>
+        <member name="M:DotNetARX.ViewportTools.CurrentViewportTableRecordId(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            获取当前活动视口
+            </summary>
+            <param name="db">数据库对象</param>
+            <returns>返回当前活动视口的Id</returns>
+        </member>
+        <member name="T:DotNetARX.ViewTableTools">
+            <summary>
+            视图操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.Wcs2Dcs(Autodesk.AutoCAD.DatabaseServices.AbstractViewTableRecord)">
+            <summary>
+            获取WCS到DCS的转换矩阵
+            </summary>
+            <param name="vtr">视图（ViewTableRecord）或视口（ViewportTableRecord）</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.Zoom(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d,System.Double)">
+            <summary>
+            视图缩放
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="ptMin">要显示区域的左下角点</param>
+            <param name="ptMax">要显示区域的右上角点</param>
+            <param name="ptCenter">要显示区域的中心点</param>
+            <param name="factor">缩放比例</param>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.ZoomScaled(Autodesk.AutoCAD.EditorInput.Editor,System.Double)">
+            <summary>
+            比例缩放视图
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="scale">缩放比例</param>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.ZoomWindow(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            窗口缩放视图
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="pt1">窗口的角点</param>
+            <param name="pt2">窗口的角点</param>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.ZoomExtents(Autodesk.AutoCAD.EditorInput.Editor)">
+            <summary>
+            根据图形边界显示视图
+            </summary>
+            <param name="ed">命令行对象</param>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.ZoomObject(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>
+            根据对象的范围显示视图
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="entId">对象的Id</param>
+        </member>
+        <member name="M:DotNetARX.ViewTableTools.ZoomCenter(Autodesk.AutoCAD.EditorInput.Editor,Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            居中显示视图
+            </summary>
+            <param name="ed">命令行对象</param>
+            <param name="center">居中的点</param>
+        </member>
+        <member name="T:DotNetARX.XDataTools">
+            <summary>
+            扩展数据操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.XDataTools.AddXData(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,DotNetARX.TypedValueList)">
+            <summary>
+            为对象添加扩展数据
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="regAppName">注册应用程序名</param>
+            <param name="values">要添加的扩展数据项列表</param>
+        </member>
+        <member name="M:DotNetARX.XDataTools.GetXData(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String)">
+            <summary>
+            获取对象的扩展数据
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="regAppName">注册应用程序名</param>
+            <returns>返回获得的扩展数据</returns>
+        </member>
+        <member name="M:DotNetARX.XDataTools.ModXData(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String,Autodesk.AutoCAD.DatabaseServices.DxfCode,System.Object,System.Object)">
+            <summary>
+            修改扩展数据
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="regAppName">注册应用程序名</param>
+            <param name="code">扩展数据的类型</param>
+            <param name="oldValue">原来的扩展数据值</param>
+            <param name="newValue">新的扩展数据值</param>
+        </member>
+        <member name="M:DotNetARX.XDataTools.RemoveXData(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.String)">
+            <summary>
+            删除指定注册应用程序下的扩展数据
+            </summary>
+            <param name="id">对象的Id</param>
+            <param name="regAppName">注册应用程序名</param>
+        </member>
+        <member name="T:DotNetARX.XrefTools">
+            <summary>
+            外部参照操作类
+            </summary>
+        </member>
+        <member name="M:DotNetARX.XrefTools.AttachXref(Autodesk.AutoCAD.DatabaseServices.Database,System.String,System.String,Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Scale3d,System.Double,System.Boolean)">
+            <summary>
+            将外部参照插入到图形
+            </summary>
+            <param name="db">数据库对象</param>
+            <param name="fileName">包含完整路径的外部参照文件名</param>
+            <param name="blockName">参照名</param>
+            <param name="insertionPoint">外部参照块的插入点</param>
+            <param name="scaleFactors">外部参照块的缩放因子</param>
+            <param name="rotation">外部参照块的旋转角度，以弧度表示</param>
+            <param name="isOverlay">外部参照块的类型，为true时表示覆盖，为false时表示附着</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

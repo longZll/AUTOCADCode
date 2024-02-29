@@ -1,0 +1,1599 @@
+{
+  "Grids": [
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "19"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "18"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "17"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "16"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "15"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "14"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "13"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "12"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "11"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "8"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "5"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "4"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "20"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "A"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "B"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "C"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "D"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "E"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "F"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "G"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "H"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "J"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "K"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "A"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "B"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "C"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "D"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "E"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "F"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "G"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "H"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "J"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "K"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "19"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "18"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "17"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "16"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "15"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "14"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "13"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "12"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "11"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "8"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "5"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "4"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "20"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "AXIS_DIM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "1"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "2"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "3"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "6"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "10"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "9"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    },
+    {
+      "EntityType": "GridBlock",
+      "ObjectId": "图纸",
+      "LAYER": "FLOOR_DOWN_NUM",
+      "Children": [
+        {
+          "Types": null,
+          "Text": "7"
+        }
+      ]
+    }
+  ]
+}

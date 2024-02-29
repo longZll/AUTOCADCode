@@ -1,0 +1,1 @@
+﻿(command “netload” “F:\CADLearn\AUTOCADCode\MyCD\Chap09\outPutPath\AttachingExternalReference.dll”)
