@@ -15,7 +15,9 @@ namespace InitAndOpt
             Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
 
             //string fileFirstName = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "F:\\CADLearn\\AUTOCAD VBA&VB.NET开发基础与实例教程第2版(C#版) 配套源码\\我的光盘\\Chap01\\outPutPath\\Hello.dll";      // Hello.dll程序集的文件路径
+
+            //F:\CADLearn\AUTOCADCode\MyCD\Chap01\outPutPath\Hello.dll
+            string fileName = "F:\\CADLearn\\AUTOCADcode\\MyCD\\Chap01\\outPutPath\\Hello.dll";      // Hello.dll程序集的文件路径
 
             try
             {
@@ -31,6 +33,7 @@ namespace InitAndOpt
             // 在命令行上显示信息，提示用户Hello.dll程序集已经被载入
             ed.WriteMessage("\n" + fileName + "被载入，请输入Hello进行测试！");
         }
+        
         /// <summary>
         /// 改变单个选中对象的颜色
         /// </summary>
@@ -156,7 +159,7 @@ namespace InitAndOpt
                     case ErrorStatus.InvalidIndex:      //输入错误的颜色值
                         ed.WriteMessage("\n 输入的颜色值有误");
                         break;
-                    case ErrorStatus.InvalidObjectId:  //未选择对象,无效的对象id
+                    case ErrorStatus.InvalidObjectId:   //未选择对象,无效的对象id
                         ed.WriteMessage("\n 未选择对象,无效的对象id");
                         break;
                     default:

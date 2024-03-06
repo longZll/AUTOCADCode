@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynBlock1</name>
+    </assembly>
+    <members>
+        <member name="T:DynBlock.DynBlock">
+            <summary>
+            动态块案例
+            </summary>
+        </member>
+        <member name="M:DynBlock.DynBlock.CountDynBlock">
+            <summary>
+            统计向右边开的门的数量
+            </summary>
+        </member>
+        <member name="M:DynBlock.DynBlock.InsertDynBlock">
+            <summary>
+            插入动态块
+            </summary>
+        </member>
+    </members>
+</doc>

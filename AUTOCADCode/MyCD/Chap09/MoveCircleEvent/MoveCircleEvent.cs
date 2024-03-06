@@ -27,6 +27,7 @@ namespace MoveCircleEvent
             }
         }
 
+        //打开对象进行修改 事件
         void objectOpenedForModify(object sender, ObjectEventArgs e)
         {
             //判断AutoCAD命令是否为移动
@@ -48,6 +49,7 @@ namespace MoveCircleEvent
             if (bMove == false)
                 //如果AutoCAD命令为非移动，则返回
                 return;
+            
             //断开所有的事件处理函数
             removeEvents();
 
@@ -56,7 +58,7 @@ namespace MoveCircleEvent
             if (startCirlce == null)
                 return;
 
-            //设置选择集过滤器，只选择图形中的圆
+            //设置选择集过滤器，只选择dwg图形数据库中所有的圆
             TypedValue[] values = { new TypedValue((int)DxfCode.Start, "Circle") };
             SelectionFilter filter = new SelectionFilter(values);
             PromptSelectionResult resSel = ed.SelectAll(filter);
@@ -70,7 +72,7 @@ namespace MoveCircleEvent
                 //开始事务处理
                 using (Transaction trans = db.TransactionManager.StartTransaction())
                 {
-                    //循环遍历选择集中的所有的圆
+                    //循环遍历 选择集中的所有的圆
                     foreach (ObjectId id in ids)
                     {
                         //以读的方式打开圆对象
@@ -80,6 +82,7 @@ namespace MoveCircleEvent
                         {
                             //因为上面以读的方式打开了圆，所以为了改变圆的圆心位置必须改变为写
                             followedCirlce.UpgradeOpen();
+                            
                             //改变圆的圆心，以达到移动的目的
                             followedCirlce.Center = startCirlce.Center;
                         }

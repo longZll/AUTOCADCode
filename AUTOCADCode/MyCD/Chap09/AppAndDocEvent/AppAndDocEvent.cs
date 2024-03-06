@@ -15,31 +15,35 @@ namespace AppAndDocEvent
         ObjectId arcLayerId;        // 弧线层Id
         ObjectId polylineLayerId;   // 多段线层Id
 
-
         public void Initialize()
         {
             Document doc = AcadApp.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
             DocumentCollection docs = AcadApp.DocumentManager;
+
             using (Transaction trans = db.TransactionManager.StartTransaction())
             {
-                lineLayerId = db.AddLayer("直线");        //添加直线层
-                circleLayerId = db.AddLayer("圆");        //添加圆层
-                arcLayerId = db.AddLayer("圆弧");         //添加圆弧层
-                polylineLayerId = db.AddLayer("多段线");  //添加多段线层
+                lineLayerId = db.AddLayer("直线");        //添加'直线'图层
+                circleLayerId = db.AddLayer("圆");        //添加'圆'图层
+                arcLayerId = db.AddLayer("圆弧");         //添加'圆弧'图层
+                polylineLayerId = db.AddLayer("多段线");  //添加'多段线'图层
                 trans.Commit();
             }
 
             docs.DocumentLockModeChanged += new DocumentLockModeChangedEventHandler(docs_DocumentLockModeChanged);
-            
-            doc.BeginDocumentClose += delegate(object sender, DocumentBeginCloseEventArgs e)
+
+            //阻止文档的关闭
+            doc.BeginDocumentClose += delegate (object sender, DocumentBeginCloseEventArgs e)
             {
                 //提示用户是否真的需要关闭文档
                 DialogResult result = MessageBox.Show("文档将被关闭\n是否继续？", "关闭文档", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)//如果不选择关闭文档，则放弃文档关闭事件
-                    e.Veto();
+                { e.Veto(); }
+
             };
 
+
+            //AutoCAD系统变量变化时通知用户
             AcadApp.SystemVariableChanged += (sender, e) =>
             {
                 if (e.Name == "ORTHOMODE")  //如果ORTHOMODE系统变量发生变化
@@ -56,14 +60,14 @@ namespace AppAndDocEvent
         void docs_DocumentLockModeChanged(object sender, DocumentLockModeChangedEventArgs e)
         {
             Database db = HostApplicationServices.WorkingDatabase;
-            switch (e.GlobalCommandName)    //根据命令名执行不同的动作
+            switch (e.GlobalCommandName)  //根据命令名执行不同的动作
             {
                 case "ERASE"://如果是删除对象
-                    e.Veto();//撤销删除动作
+                    e.Veto();//撤销删除动作,在AutoCAD中禁用了"删除"命令
                     Editor ed = AcadApp.DocumentManager.MdiActiveDocument.Editor;
                     ed.WriteMessage("\nERASE命令已经被禁止，无法删除对象！");
                     break;
-                case "LINE":    //如果是绘制直线，则当前图层设为直线层
+                case "LINE":    //如果是绘制直线，则当前图层设为直线层. 实现按照实体类型的分层，也就是在创建实体时将不同类型的实体放置在不同的图层中
                     db.Clayer = lineLayerId;
                     break;
                 case "CIRCLE":  //如果是绘制圆，则当前图层设为圆层

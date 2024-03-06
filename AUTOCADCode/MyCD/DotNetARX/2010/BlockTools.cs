@@ -53,11 +53,13 @@ namespace DotNetARX
                 //创建一个BlockTableRecord类的对象，表示所要创建的块
                 BlockTableRecord btr = new BlockTableRecord();
                 btr.Name = blockName;//设置块名                
+                
                 //将列表中的实体加入到新建的BlockTableRecord对象
                 ents.ForEach(ent => btr.AppendEntity(ent));
-                bt.UpgradeOpen();//切换块表为写的状态
-                bt.Add(btr);//在块表中加入blockName块
-                db.TransactionManager.AddNewlyCreatedDBObject(btr, true);//通知事务处理
+
+                bt.UpgradeOpen();   //切换块表为写的状态
+                bt.Add(btr);        //在块表中加入blockName块
+                db.TransactionManager.AddNewlyCreatedDBObject(btr, true);   //通知事务处理
                 bt.DowngradeOpen();//为了安全，将块表状态改为读
             }
             return bt[blockName];//返回块表记录的Id
@@ -89,30 +91,36 @@ namespace DotNetARX
         {
             ObjectId blockRefId;//存储要插入的块参照的Id
             Database db = spaceId.Database;//获取数据库对象
+
             //以读的方式打开块表
             BlockTable bt = (BlockTable)db.BlockTableId.GetObject(OpenMode.ForRead);
             //如果没有blockName表示的块，则程序返回
             if (!bt.Has(blockName)) return ObjectId.Null;
+
             //以写的方式打开空间（模型空间或图纸空间）
             BlockTableRecord space = (BlockTableRecord)spaceId.GetObject(OpenMode.ForWrite);
             //创建一个块参照并设置插入点
             BlockReference br = new BlockReference(position, bt[blockName]);
+
             br.ScaleFactors = scale;//设置块参照的缩放比例
-            br.Layer = layer;//设置块参照的层名
+            br.Layer = layer;       //设置块参照的图层层名
             br.Rotation = rotateAngle;//设置块参照的旋转角度
             ObjectId btrId = bt[blockName];//获取块表记录的Id
+            
             //打开块表记录
             BlockTableRecord record = (BlockTableRecord)btrId.GetObject(OpenMode.ForRead);
+            
             //添加可缩放性支持
             if (record.Annotative == AnnotativeStates.True)
             {
                 ObjectContextCollection contextCollection = db.ObjectContextManager.GetContextCollection("ACDB_ANNOTATIONSCALES");
                 ObjectContexts.AddContext(br, contextCollection.GetContext("1:1"));
             }
-            blockRefId = space.AppendEntity(br);//在空间中加入创建的块参照
+
+            blockRefId = space.AppendEntity(br);                   //在空间中加入创建的块参照
             db.TransactionManager.AddNewlyCreatedDBObject(br, true);//通知事务处理加入创建的块参照
-            space.DowngradeOpen();//为了安全，将块表状态改为读
-            return blockRefId;//返回添加的块参照的Id
+            space.DowngradeOpen();                     //为了安全，将块表状态改为读
+            return blockRefId;  //返回添加的块参照的Id
         }
 
         /// <summary>
@@ -144,6 +152,7 @@ namespace DotNetARX
             br.Layer = layer;//设置块参照的层名
             br.Rotation = rotateAngle;//设置块参照的旋转角度
             space.AppendEntity(br);//为了安全，将块表状态改为读 
+
             //判断块表记录是否包含属性定义
             if (record.HasAttributeDefinitions)
             {
@@ -156,18 +165,21 @@ namespace DotNetARX
                     {
                         //创建一个新的属性对象
                         AttributeReference attribute = new AttributeReference();
+                        
                         //从属性定义获得属性对象的对象特性
                         attribute.SetAttributeFromBlock(attDef, br.BlockTransform);
                         //设置属性对象的其它特性
                         attribute.Position = attDef.Position.TransformBy(br.BlockTransform);
                         attribute.Rotation = attDef.Rotation;
                         attribute.AdjustAlignment(db);
+
                         //判断是否包含指定的属性名称
                         if (attNameValues.ContainsKey(attDef.Tag.ToUpper()))
                         {
                             //设置属性值
                             attribute.TextString = attNameValues[attDef.Tag.ToUpper()].ToString();
                         }
+
                         //向块参照添加属性对象
                         br.AttributeCollection.AppendAttribute(attribute);
                         db.TransactionManager.AddNewlyCreatedDBObject(attribute, true);
@@ -175,6 +187,7 @@ namespace DotNetARX
                 }
             }
             db.TransactionManager.AddNewlyCreatedDBObject(br, true);
+
             return br.ObjectId;//返回添加的块参照的Id
         }
 

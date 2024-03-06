@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\Autodesk\AutoCAD 2020\acad.exe</StartProgram>
+    <StartArguments>/b "F:\CADLearn\AUTOCADCode\MyCD\Chap09\MoveCircleEvent\start.scr"</StartArguments>
   </PropertyGroup>
 </Project>

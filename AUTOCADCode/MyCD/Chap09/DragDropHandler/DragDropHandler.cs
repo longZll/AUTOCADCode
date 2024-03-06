@@ -11,6 +11,9 @@ using Autodesk.AutoCAD.Runtime;
 
 namespace DragDropHandler
 {
+    /// <summary>
+    /// 拖放处理程序
+    /// </summary>
     public class DragDropHandler
     {
         [CommandMethod("EnableDragDrop")]
