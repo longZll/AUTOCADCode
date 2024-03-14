@@ -142,7 +142,7 @@
             <param name="position">插入点</param>
             <param name="scale">缩放比例</param>
             <param name="rotateAngle">旋转角度</param>
-            <param name="attNameValues">属性的名称与取值</param>
+            <param name="attNameValues">属性的名称与取值字典</param>
             <returns>返回块参照的Id</returns>
         </member>
         <member name="M:DotNetARX.BlockTools.UpdateAttributesInBlock(Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Collections.Generic.Dictionary{System.String,System.String})">
@@ -207,7 +207,7 @@
         </member>
         <member name="M:DotNetARX.BlockTools.GetBlockName(Autodesk.AutoCAD.DatabaseServices.BlockReference)">
             <summary>
-            获取块参照的块名（包括动态块）
+            通过块参照,获取块参照的块名（包括动态块）
             </summary>
             <param name="bref">块参照</param>
             <returns>返回块名</returns>
@@ -221,7 +221,7 @@
         </member>
         <member name="M:DotNetARX.BlockTools.AddAttsToBlock(Autodesk.AutoCAD.DatabaseServices.ObjectId,Autodesk.AutoCAD.DatabaseServices.AttributeDefinition[])">
             <summary>
-            为块表记录添加属性
+            为块表记录添加属性,接受不固定参数个数的属性定义对象
             </summary>
             <param name="blockId">块表记录的Id</param>
             <param name="atts">要加入的块属性列表</param>

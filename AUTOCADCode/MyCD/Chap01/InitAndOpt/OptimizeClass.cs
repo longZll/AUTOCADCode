@@ -17,8 +17,10 @@ namespace InitAndOpt
             //string fileFirstName = AppDomain.CurrentDomain.BaseDirectory;
 
             //F:\CADLearn\AUTOCADCode\MyCD\Chap01\outPutPath\Hello.dll
-            string fileName = "F:\\CADLearn\\AUTOCADcode\\MyCD\\Chap01\\outPutPath\\Hello.dll";      // Hello.dll程序集的文件路径
-
+            //Hello.dll程序集的文件路径
+            string fileName = "F:\\CADLearn\\AUTOCADcode\\MyCD\\Chap01\\outPutPath\\Hello.dll";    
+            
+            //。。。。....“” "" ‘’ ''[]  { }+====----()
             try
             {
                 ExtensionLoader.Load(fileName); //载入Hello.dll程序集
@@ -55,21 +57,6 @@ namespace InitAndOpt
                 {
                     //锁定文档以确保不被其他操作影响
                     DocumentLock docLock = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.LockDocument();
-
-                    //// 获取模型空间的块表记录
-                    //BlockTable bt = tr.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
-                    //BlockTableRecord btr = tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
-
-                    //// 获取或创建图层
-                    //LayerTable layerTable = (LayerTable)tr.GetObject(db.LayerTableId, OpenMode.ForRead);
-
-                    //// 绘制直线作为轴网示例
-                    //Point3d startPoint = new Point3d(0, 0, 0);
-                    //Point3d endPoint = new Point3d(100, 100, 0);
-
-                    //Line axisLine = new Line(startPoint, endPoint);
-                    //axisLine.ColorIndex = 5; // 设置颜色为红色
-                    //axisLine.Layer = "AXIS"; // 将直线添加到"AXIS"图层
 
                     Entity ent = tr.GetObject(id, OpenMode.ForWrite) as Entity;
                     ent.ColorIndex = 5;         //5号颜色为蓝色,为测试异常,可以设置对象为不合法的颜色
@@ -140,7 +127,7 @@ namespace InitAndOpt
                     foreach (SelectedObject selectedObject in selectionSet)
                     {
                         Entity ent = tr.GetObject(selectedObject.ObjectId, OpenMode.ForWrite) as Entity;
-                        ent.ColorIndex = 5; //将颜色设置为蓝色（颜色索引为5）
+                        ent.ColorIndex = 3; //将颜色设置为蓝色（颜色索引为5）
                     }
 
 

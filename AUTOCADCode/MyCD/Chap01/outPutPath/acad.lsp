@@ -7,7 +7,9 @@
 (setq aawDwgPath "")		; The drawing path. No tail slash, either forward or backward.
 (setq aawDwgName "")	; The drawing name. No matter whether upper or lower.
 (setq aawCmdToCall "OptCommand")		; The commond name to call right after the assembly is loaded and the drawing opened.
-(setq aawNetToLoad "F:/AutoCAD二次开发实例教程/Book/程序/1章/Chap01/AcadNetAddinCS1/bin/Debug/AcadNetAddinCS1.dll")		; The assembly to load.
+(setq aawNetToLoad "F:/CADLearn/AUTOCADCode/MyCD/Chap01/outPutPath/AcadNetAddinCS1.dll")		
+
+; The assembly to load.
 
 (Defun OpenDwg ( file / )
 	(vl-load-com)

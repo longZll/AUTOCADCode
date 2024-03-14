@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
@@ -13,6 +14,51 @@ namespace DynBlock
     /// </summary>
     public class DynBlock
     {
+        /// <summary>
+        /// 利用直线和圆弧制作门
+        /// </summary>
+        /// <returns></returns>
+        
+        //[CommandMethod("MakeDoor")]
+        public ObjectId MakeDoor()
+        {
+            ObjectId blockId;
+            Database db = HostApplicationServices.WorkingDatabase;
+            using (Transaction trans = db.TransactionManager.StartTransaction())
+            {
+                //设置门框的左边线
+                Point3d pt1 = Point3d.Origin;
+                Point3d pt2 = new Point3d(0, 1.0, 0);
+                Line leftLine = new Line(pt1, pt2);
+
+                //门框的下边线
+                Line bottomLine = new Line(pt1, pt1.PolarPoint(0, 0.05));
+
+                //设置表示门面的圆弧
+                Arc arc = new Arc();
+                arc.CreateArc(pt1.PolarPoint(0, 1), pt1, Math.PI / 2);
+                //设置门框的右边线
+                Line rightLine = new Line(bottomLine.EndPoint, leftLine.EndPoint.PolarPoint(0, 0.05));
+
+                Point3dCollection pts = new Point3dCollection();
+
+                //获取直线与arc圆弧的交点,并且存储在pts中
+                //rightLine.IntersectWith(arc, Intersect.OnBothOperands, pts, 0, 0);
+
+                rightLine.IntersectWith(arc, Intersect.OnBothOperands, pts, IntPtr.Zero, IntPtr.Zero);
+
+                if (pts.Count == 0) return ObjectId.Null;
+
+                rightLine.EndPoint = pts[0];
+
+                //将表示门的直线和圆弧 添加到BlockTableRecor,块的名字为设置为"Door"
+                blockId = db.AddBlockTableRecord("Door", leftLine, bottomLine, rightLine, arc);
+
+                trans.Commit();
+            }
+            return blockId;
+        }
+
         /// <summary>
         /// 统计向右边开的门的数量
         /// </summary>

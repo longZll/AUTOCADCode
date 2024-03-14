@@ -1,0 +1,1 @@
+(command "netload" "F:\CADLearn\AUTOCADCode\MyCD\Chap05\outPutPath\DynBlock1.dll")

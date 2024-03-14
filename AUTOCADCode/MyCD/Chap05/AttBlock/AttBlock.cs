@@ -16,6 +16,7 @@ namespace AttBlock
         {
             ObjectId blockId;
             Database db=HostApplicationServices.WorkingDatabase;
+
             using (Transaction trans=db.TransactionManager.StartTransaction())
             {
                 //设置门框的左边线
@@ -35,13 +36,16 @@ namespace AttBlock
                 Point3dCollection pts=new Point3dCollection();
                 
                 //获取直线与arc圆弧的交点,并且存储在pts中
-                rightLine.IntersectWith(arc, Intersect.OnBothOperands, pts, 0, 0);
-                
+                //rightLine.IntersectWith(arc, Intersect.OnBothOperands, pts, 0, 0);
+
+                rightLine.IntersectWith(arc, Intersect.OnBothOperands, pts, IntPtr.Zero, IntPtr.Zero);
+
                 if (pts.Count == 0) return ObjectId.Null;
 
                 rightLine.EndPoint = pts[0];
                 
-                //将表示门的直线和圆弧添加到名为DOOR的块表记录
+
+                //将表示门的直线和圆弧合成为块,并设置块名为"DOOR",最后添加该图块到图形数据库中
                 blockId = db.AddBlockTableRecord("DOOR", leftLine, bottomLine, rightLine, arc);
 
                 trans.Commit();
@@ -50,13 +54,14 @@ namespace AttBlock
         }
 
         /// <summary>
-        /// 为门的 DOOR块定义添加属性
+        /// 制作门图块,为门的添加属性定义
         /// </summary>
-        [CommandMethod("Door")]
-        public void AddDoor()
+        [CommandMethod("AddDoorAtt")]
+        public void AddDoorAtt()
         {
             Database db=HostApplicationServices.WorkingDatabase;
 
+            //调用上面的制作门的方法
             ObjectId blockId=MakeDoor();    //创建表示门的DOOR块定义
 
             using (Transaction trans=db.TransactionManager.StartTransaction())
@@ -102,7 +107,7 @@ namespace AttBlock
 
         private void SetStyleForAtt(AttributeDefinition att, bool invisible)
         {
-            att.Height = 0.15;//属性文字的高度
+            att.Height = 0.15;  //属性文字的高度
 
             //属性文字的水平对齐方式为居中
             att.HorizontalMode = TextHorizontalMode.TextCenter;
@@ -113,6 +118,10 @@ namespace AttBlock
             att.Invisible = invisible; //属性文字的可见性
         }
 
+
+        /// <summary>
+        /// 插入 门属性块
+        /// </summary>
         [CommandMethod("InsertDoor")]
         public void InsertDoor()
         {
@@ -128,8 +137,9 @@ namespace AttBlock
                 atts.Add("HEIGHT", "2.2m"); //门的高度
                 atts.Add("COST", "200.0");  //门的单价
                 
-                //在当前空间加入块参照
+                //在当前空间0图形中 加入一个表示门的带属性块参照
                 spaceId.InsertBlockReference("0", "DOOR", Point3d.Origin, new Scale3d(3), 0, atts);
+                
                 trans.Commit();
             }
         }
@@ -138,7 +148,7 @@ namespace AttBlock
         /// 更新的图块门的相关属性
         /// </summary>
         [CommandMethod("UpdateDoorAtt")]
-        public void UpdateDoor()
+        public void UpdateDoorAtt()
         {
             Database db=HostApplicationServices.WorkingDatabase;
             Editor ed=Application.DocumentManager.MdiActiveDocument.Editor;
@@ -160,7 +170,7 @@ namespace AttBlock
                 Dictionary<string,string> atts=new Dictionary<string, string>();
 
                 atts.Add("SYM", "2");
-                atts.Add("COST", "300");
+                atts.Add("COST", "500");
                 atts.Add("WIDTH","1.0");
                 atts.Add("HEIGHT", "2.5");
 

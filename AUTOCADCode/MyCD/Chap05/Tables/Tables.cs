@@ -41,6 +41,9 @@ namespace Tables
                 table.SetTextString(1, 0, "序号");
                 table.SetTextString(1, 1, "名字");
                 table.SetTextString(1, 2, "数量");
+
+                //Table.Cells[1, 2].TextString("数量");
+
                 table.SetTextString(1, 3, "缩略图");
                 int i=2;
                 //将块参照的统计结果放入到表格中

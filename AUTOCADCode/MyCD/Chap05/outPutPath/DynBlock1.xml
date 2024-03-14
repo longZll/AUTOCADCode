@@ -9,6 +9,12 @@
             动态块案例
             </summary>
         </member>
+        <member name="M:DynBlock.DynBlock.MakeDoor">
+            <summary>
+            利用直线和圆弧制作门
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:DynBlock.DynBlock.CountDynBlock">
             <summary>
             统计向右边开的门的数量
