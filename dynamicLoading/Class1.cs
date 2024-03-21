@@ -20,7 +20,7 @@ namespace load
 
             // 创建一个AssemblyDependent实例，并传入dll文件的路径
             //var ad = new AssemblyDependent("E:\\cad\\bin\\Debug\\demo.dll");  //写上你dll的路径
-            var ad = new AssemblyDependent(@"F:\CADModelIdentify\CAD\CADwork\CADwork\bin\Debug\CADwork.dll");  //写上你dll的路径
+            var ad = new AssemblyDependent(@"F:\cadDevelopment\Install\bin\DwgFilePro.dll");  //写上你dll的路径
             
             // 调用Load方法加载dll，并返回加载信息
             var msg = ad.Load();

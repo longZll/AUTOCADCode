@@ -15,15 +15,15 @@
 	
 	<ItemGroup>
 	  <Reference Include="accoremgd">
-	    <HintPath>C:\Program Files\Autodesk\AutoCAD 2020\accoremgd.dll</HintPath>
+	    <HintPath>..\..\cadDevelopment\Exlib\CAD2016\accoremgd.dll</HintPath>
 	    <Private>false</Private>
 	  </Reference>
 	  <Reference Include="Acdbmgd">
-	    <HintPath>C:\Program Files\Autodesk\AutoCAD 2020\acdbmgd.dll</HintPath>
+	    <HintPath>..\..\cadDevelopment\Exlib\CAD2016\acdbmgd.dll</HintPath>
 	    <Private>false</Private>
 	  </Reference>
 	  <Reference Include="Acmgd">
-	    <HintPath>C:\Program Files\Autodesk\AutoCAD 2020\Acmgd.dll</HintPath>
+	    <HintPath>..\..\cadDevelopment\Exlib\CAD2016\acmgd.dll</HintPath>
 	    <Private>false</Private>
 	  </Reference>
 	</ItemGroup>
